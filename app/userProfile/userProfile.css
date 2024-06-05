@@ -1,0 +1,61 @@
+.user_profile_wrapper {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user_profile h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.user_info_wrapper {
+    margin-bottom: 20px;
+}
+
+.user_info_wrapper p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.user_tickets_info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.user_tickets_info button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user_tickets_info button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
