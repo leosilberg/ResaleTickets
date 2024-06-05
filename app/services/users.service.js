@@ -8,7 +8,6 @@ export const usersService = {
   logInUser,
   createUser,
 };
-("../../data/test-data.json");
 let _currentUser;
 
 async function getUsers() {

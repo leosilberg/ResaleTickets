@@ -1,19 +1,11 @@
 export const ticketsService = {
-
+  paginateTickets,
   createTicket,
   validateSerialNumber,
   getTicketById,
 };
 
-window.onload = onInit;
-
-function onInit() {
-  window.createTicket = createTicket;
-  window.getTicketById = getTicketById;
-}
-
 const ticketsUrl = "http://localhost:8001/tickets";
-const usersUrl = "http://localhost:8001/users";
 
 async function createTicket(userId, ticketData) {
   try {
@@ -40,12 +32,6 @@ async function validateSerialNumber(serialNumber) {
   return res.data.length === 0;
 }
 
-const button = document.querySelector(".button");
-button.addEventListener("click", function (event) {
-  getTicketById("ticket3");
-  event.preventDefault();
-});
-
 async function getTicketById(id) {
   try {
     const response = await axios.get(`${ticketsUrl}/${id}?_embed=user`);
@@ -53,8 +39,8 @@ async function getTicketById(id) {
     return { ...response.data, user: response.data.user.userInfo };
   } catch (error) {
     console.error("Error fetching ticket by ID:", error);
-  paginateTickets,
-};
+  }
+}
 
 async function paginateTickets(
   pageNum,
@@ -68,7 +54,7 @@ async function paginateTickets(
     while (temp.length < ticketsPerPage && pageNum <= maxPages) {
       console.log(pageNum);
       const result = await axios.get(
-        `http://localhost:8001/tickets?_embed=user&_sort=${sortOrder}&_page=${pageNum}&_per_page=${ticketsPerPage}`
+        `${ticketsUrl}?_embed=user&_sort=${sortOrder}&_page=${pageNum}&_per_page=${ticketsPerPage}`
       );
 
       temp = temp.concat(
