@@ -1,11 +1,12 @@
 import { ticketsService } from "../services/tickets.service.js";
 import { navbarServices } from "../services/navbar.service.js";
+
 const urlObj = new URL(window.location.href);
 const params = new URLSearchParams(urlObj.searchParams);
 const ticketID = params.get("id");
 
 export const singelTicket = {
-  displayTicketInfo
+  displayTicketInfo,
 };
 
 const button = document.querySelector(".button");

@@ -29,6 +29,46 @@
         "lname": "asfasf",
         "email": "bitonnevo@gmail.com"
       }
+    },
+    {
+      "id": "32a4",
+      "username": "NEVO",
+      "password": "12345",
+      "userInfo": {
+        "fname": "nevo",
+        "lname": "biton",
+        "email": "nevo@gasodf"
+      }
+    },
+    {
+      "id": "6037",
+      "username": "NEVOw",
+      "password": "12345",
+      "userInfo": {
+        "fname": "nevo",
+        "lname": "biton",
+        "email": "nevo@gasodf.com"
+      }
+    },
+    {
+      "id": "bf55",
+      "username": "nevobiton",
+      "password": "asdasd",
+      "userInfo": {
+        "fname": "nevo",
+        "lname": "biton",
+        "email": "nevus@gmai.com"
+      }
+    },
+    {
+      "id": "eaa7",
+      "username": "nevositon",
+      "password": "asdsw",
+      "userInfo": {
+        "fname": "nevoBVA",
+        "lname": "ASD",
+        "email": "nevo@gmail.com"
+      }
     }
   ],
   "purchasedTickets": [],
@@ -309,17 +349,6 @@
       "isonsale": true
     },
     {
-      "id": "360e",
-      "userId": "testUser",
-      "category": "",
-      "date": "",
-      "title": "",
-      "price": "",
-      "location": "",
-      "serialnumber": "1233",
-      "isonsale": true
-    },
-    {
       "id": "4c3c",
       "userId": "testUser",
       "category": "football",
@@ -328,6 +357,83 @@
       "price": "400",
       "location": "Tel Aviv",
       "serialnumber": "7777777",
+      "isonsale": true
+    },
+    {
+      "id": "769a",
+      "userId": "testUser",
+      "category": "football",
+      "date": "2024-06-04",
+      "title": "asd",
+      "price": "233",
+      "location": "Tel Aviv",
+      "serialnumber": "23211",
+      "isonsale": true
+    },
+    {
+      "id": "b5e4",
+      "userId": "testUser",
+      "category": "asd",
+      "date": "2024-06-04",
+      "title": "asd",
+      "price": "12",
+      "location": "asd",
+      "serialnumber": "12",
+      "isonsale": true
+    },
+    {
+      "id": "1c43",
+      "userId": "testUser",
+      "category": "asd",
+      "date": "2024-06-04",
+      "title": "asd",
+      "price": "12",
+      "location": "asd",
+      "serialnumber": "122",
+      "isonsale": true
+    },
+    {
+      "id": "282e",
+      "userId": "testUser",
+      "category": "asd",
+      "date": "2024-06-04",
+      "title": "asd",
+      "price": "12",
+      "location": "asd",
+      "serialnumber": "1",
+      "isonsale": true
+    },
+    {
+      "id": "6c53",
+      "userId": "testUser",
+      "category": "asd",
+      "date": "2024-06-04",
+      "title": "asd",
+      "price": "12",
+      "location": "12",
+      "serialnumber": "1222",
+      "isonsale": true
+    },
+    {
+      "id": "8c77",
+      "userId": "testUser",
+      "category": "books",
+      "date": "2024-06-04",
+      "title": "asd",
+      "price": "12",
+      "location": "asd",
+      "serialnumber": "12212",
+      "isonsale": true
+    },
+    {
+      "id": "937c",
+      "userId": "testUser",
+      "category": "theater",
+      "date": "2024-06-04",
+      "title": "asdasd",
+      "price": "12341",
+      "location": "asd",
+      "serialnumber": "23211212",
       "isonsale": true
     }
   ]

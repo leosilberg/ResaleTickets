@@ -27,7 +27,10 @@ async function onInit() {
             <p>Email: ${currentUser.userInfo.email}</p>
             <div class="user_tickets_info">
             <button onclick="displayTicketsOnSaleByMe()">Tickets On Sale By Me</button>
-            <button onclick="displayActionHistory()">Action History</button>`;
+            <div>
+            <button onclick="displayActionHistory()">Action History</button>
+            <button onclick="window.location.href='../createTicket/createTicker.html'">Create new Ticket</button>
+            </div>`;
 }
 
 async function displayTicketsOnSaleByMe() {
@@ -68,5 +71,4 @@ async function displayTicketsOnSaleByMe() {
     });
 
   elemUserTicketsOnSale.appendChild(table);
-  console.log(user.tickets);
 }
