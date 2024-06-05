@@ -17,6 +17,18 @@
 
   <body>
     <div class="main">
+      <dialog id="logInDialog">
+        <a href="../signup/signup.html"
+          >Don't have an account? Click to register</a
+        >
+        <form id="logInForm">
+          <label for="username">Username</label
+          ><input type="text" name="username" id="username" />
+          <label for="password">password</label
+          ><input type="password" name="password" id="password" />
+          <button>Sign In</button>
+        </form>
+      </dialog>
       <nav class="navbar">
         <div class="logo">
           <a href="../home/index.html"
@@ -34,10 +46,15 @@
         </div>
       </nav>
       <div class="user_profile_wrapper">
-        <div class="user_profile">
-        </div>
+        <div class="user_profile"></div>
         <h1>Tickets For Sale</h1>
-        <div class="tickets_on_sale_by_me_table"></div>
+        <div class="tickets_on_sale_by_me_list">
+          <div class="ticket_list_wrapper">
+            <div class="pagination"></div>
+
+            <div class="ticket_list"></div>
+          </div>
+        </div>
         <h1>Sold Tickets</h1>
         <div class="tickets_sold_by_me_table"></div>
         <div class="action_history_table"></div>

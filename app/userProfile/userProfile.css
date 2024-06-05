@@ -1,5 +1,6 @@
 .user_profile_wrapper {
-    margin: 20px;
+    margin-block: 20px;
+    margin-inline: 100px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -42,23 +43,83 @@
     background-color: #0056b3;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+
+#pagesDesc {
+    color: white;
 }
 
-th {
-    background-color: #f2f2f2;
-    padding: 8px;
-    text-align: left;
+.pageActionButton {
+    background-color: #4a3e77;
+    padding: 4px 8px 4px 8px;
 }
 
-td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+.ticket_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-tr:hover {
-    background-color: #f2f2f2;
+.ticket_card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.ticket_card:hover {
+    background-color: #d9d8d8;
+}
+
+.ticket_date {
+    font-size: 14px;
+    text-align: center;
+    padding-right: 20px;
+}
+
+.ticket_date div:first-child {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.ticket_info {
+    flex: 1;
+    padding-left: 20px;
+    border-left: solid 1px #ddd;
+
+}
+
+.ticket_title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.ticket_location,
+.ticket_seller,
+.ticket_remaining {
+    font-size: 14px;
+    color: #555;
+}
+
+.ticket_action {
+    display: flex;
+    align-items: center;
+}
+
+.see_tickets {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.see_tickets::before {
+    content: '❤️';
+    margin-right: 5px;
 }
