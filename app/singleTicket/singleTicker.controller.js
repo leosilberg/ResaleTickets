@@ -25,13 +25,14 @@ window.onload = onInit;
 
 async function onInit() {
   ticket = await ticketsService.getTicketById(ticketID);
+  console.log(ticket);
   window.purchaseTicket = purchaseTicket;
   window.onDeleteTicket = onDeleteTicket;
   // window. = currentUserValidation;
   displayTicketInfo();
 
 
-  
+
   const currentUser = await navbarServices.checkLogInStatus();
   window.onSearchClick = onSearchClick;
 }
@@ -53,7 +54,7 @@ async function onDeleteTicket() {
 async function purchaseTicket() {
   try {
     const res = await ticketsService.purchaseTicket(ticket, currentUser.id);
-    console.log(res);
+    onDeleteTicket();
   } catch (err) {
     console.log(err);
   }
@@ -73,7 +74,7 @@ async function displayTicketInfo() {
   <div class="header_and_button_wrapper">
   <h2><i class="fa-solid fa-ticket"></i>  ${ticket.title}</h2>
   </div>
-  <p>Seller : ${ticket.user?.fname}</p>
+  <p>Seller : ${ticket.user?.fname} ${ticket.user?.lname}</p>
   <p>Category: ${ticket.category}</p>
   <p>Date: ${ticket.date}</p>
   <p>Price: $${ticket.price}</p>
@@ -87,12 +88,16 @@ function openPaymentDetails() {
 }
 
 async function currentUserValidation(ticket) {
-  console.log(ticket.userId);
-  currentUser = await usersService.getCurrentUser();
-  console.log(currentUser);
-  if (ticket.userId === currentUser.id) {
-    return true;
-  } else {
+  try {
+    currentUser = await usersService.getCurrentUser();
+    console.log(currentUser);
+    if (ticket.userId === currentUser.id) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (err) {
     return false;
   }
+
 }
