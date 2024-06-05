@@ -1,5 +1,6 @@
 import { usersService } from "../services/users.service.js";
-import { navBarHandler } from "../services/navbar.service.js";
+import { navbarServices } from "../services/navbar.service.js";
+
 const urlObj = new URL(window.location.href);
 const params = new URLSearchParams(urlObj.searchParams);
 const userID = params.get("id");
@@ -13,7 +14,8 @@ const elemActionHistory = document.querySelector(".action_history_table");
 window.onload = onInit;
 
 async function onInit() {
-  navBarHandler();
+  navbarServices.signInHandler();
+  navbarServices.loginHandler();
   window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
   // window.displayActionHistory = displayActionHistory;
   const currentUser = await usersService.getUser(userID);
@@ -25,12 +27,11 @@ async function onInit() {
             <div class="user_tickets_info">
             <button onclick="displayTicketsOnSaleByMe()">Tickets On Sale By Me</button>
             <button onclick="displayActionHistory()">Action History</button>`;
-  console.log(user.tickets);
 }
 
 async function displayTicketsOnSaleByMe() {
   usersService
-    .getUser("user1")
+    .getUser(userID)
     .then((user) => {
       const tickets = user.tickets;
       console.log(tickets);
@@ -65,6 +66,10 @@ async function displayTicketsOnSaleByMe() {
           const cell = row.insertCell();
           cell.textContent = ticket[key];
         });
+        row.onclick = () =>
+          window.location.assign(
+            `../singleTicket/singleTicket.html?id=${ticket.id}`
+          );
       });
 
       elemUserTicketsOnSale.appendChild(table);
