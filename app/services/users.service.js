@@ -100,12 +100,7 @@ async function createUser(formData) {
         headers: { "Content-Type": "application/json" },
       }
     );
-    console.log(result.data);
-    if (result.data.length == 1) {
-      _currentUser = result.data[0];
-      console.log(_currentUser);
-    }
-    return result.data.length == 1;
+    localStorage.setItem(CURRENT_USER_KEY, result.data.id);
   } catch (error) {
     console.log(error);
   }
