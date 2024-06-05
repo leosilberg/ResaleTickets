@@ -1,0 +1,102 @@
+{
+    "users": [
+        {
+            "id": "user1",
+            "username": "john_doe",
+            "password": "password123",
+            "userInfo": {
+                "fname": "John",
+                "lname": "Doe",
+                "email": "john.doe@example.com",
+                "userticketsforsale": [
+                    "ticket1",
+                    "ticket2",
+                    "ticket4"
+                ],
+                "history": {
+                    "buy": [
+                        {
+                            "ticket": "ticket1"
+                        }
+                    ],
+                    "sell": [
+                        {
+                            "ticket": "ticket3"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "user2",
+            "username": "jane_smith",
+            "password": "password456",
+            "userInfo": {
+                "fname": "Jane",
+                "lname": "Smith",
+                "email": "jane.smith@example.com",
+                "userticketsforsale": [
+                    "ticket3"
+                ],
+                "history": {
+                    "buy": [
+                        {
+                            "ticket": "ticket3"
+                        }
+                    ],
+                    "sell": [
+                        {
+                            "ticket": "ticket1"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "tickets": [
+        {
+            "id": "ticket1",
+            "userNameId": "user1",
+            "category": "sports",
+            "date": "2024-06-15",
+            "title": "Football Match",
+            "price": 50,
+            "location": "Stadium A",
+            "serialnumber": "123548758412",
+            "isonsale": true
+        },
+        {
+            "id": "ticket2",
+            "userNameId": "user1",
+            "category": "movie",
+            "date": "2024-06-10",
+            "title": "Avengers: Endgame",
+            "price": 12,
+            "location": "Cinema B",
+            "serialnumber": "157123548054",
+            "isonsale": true
+        },
+        {
+            "id": "ticket3",
+            "userNameId": "user2",
+            "category": "flight",
+            "date": "2024-07-01",
+            "title": "Flight to New York",
+            "price": 300,
+            "location": "Airport C",
+            "serialnumber": "158523548054",
+            "isonsale": false
+        },
+        {
+            "id": "ticket4",
+            "userNameId": "user1",
+            "category": "concert",
+            "date": "2024-07-20",
+            "title": "Rock Concert",
+            "price": 40,
+            "location": "Concert Hall A",
+            "serialnumber": "15710218054",
+            "isonsale": true
+        }
+    ]
+}
