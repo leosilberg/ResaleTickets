@@ -1,4 +1,9 @@
-main {display: flex;flex-direction: column;align-items: center;background-color: aliceblue;}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+}
 
 form#signUpForm {
     height: 12em;

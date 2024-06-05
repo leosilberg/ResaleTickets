@@ -13,7 +13,13 @@
 </head>
 
 <body>
-
+  <dialog open><a href="../signup/signup.html">Don't have an account? Click to register</a>
+    <form id="logInForm">
+      <label for="username">Username</label><input type="text" name="username" id="username">
+      <label for="password">password</label><input type="password" name="password" id="password">
+      <button>Sign In</button>
+    </form>
+  </dialog>
   <div class="main">
     <nav class="navbar">
       <div class="logo">
@@ -63,6 +69,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
   integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="home.controller.js"></script>
+<script type="module" src="home.controller.js"></script>
 
 </html>
