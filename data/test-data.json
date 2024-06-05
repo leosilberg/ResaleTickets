@@ -19,6 +19,16 @@
         "lname": "Smith",
         "email": "jane.smith@example.com"
       }
+    },
+    {
+      "id": "49fd",
+      "username": "nevo",
+      "password": "scdsfgv",
+      "userInfo": {
+        "fname": "asdsafd",
+        "lname": "asfasf",
+        "email": "bitonnevo@gmail.com"
+      }
     }
   ],
   "tickets": [
@@ -108,6 +118,17 @@
       "price": "",
       "location": "",
       "serialnumber": "1233",
+      "isonsale": true
+    },
+    {
+      "id": "4c3c",
+      "userId": "testUser",
+      "category": "football",
+      "date": "2024-06-19",
+      "title": "gsagdbas",
+      "price": "400",
+      "location": "Tel Aviv",
+      "serialnumber": "7777777",
       "isonsale": true
     }
   ]

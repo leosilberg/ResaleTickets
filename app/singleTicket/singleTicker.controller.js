@@ -1,5 +1,8 @@
 import { ticketsService } from "../services/tickets.service.js";
-import { navBarHandler } from "../services/navbar.service.js";
+import { navbarServices } from "../services/navbar.service.js";
+const urlObj = new URL(window.location.href);
+const params = new URLSearchParams(urlObj.searchParams);
+const ticketID = params.get("id");
 
 const button = document.querySelector(".button");
 const deleteButton = document.querySelector(".delete");
@@ -13,10 +16,7 @@ let ticket;
 window.onload = onInit;
 
 function onInit() {
-  button.addEventListener("click", async function (event) {
-    await displayTicketInfo();
-    event.preventDefault();
-  });
+  displayTicketInfo();
 
   deleteButton.addEventListener("click", async function (event) {
     onDeleteTicket();
@@ -34,7 +34,7 @@ async function onDeleteTicket() {
 }
 
 async function displayTicketInfo() {
-  ticket = await ticketsService.getTicketById("c536");
+  ticket = await ticketsService.getTicketById(ticketID);
   console.log(ticket);
   elemTicketCardContainer.innerHTML = `
   <h2>Title: ${ticket.title}</h2>
