@@ -8,10 +8,9 @@
 }
 
 .category_div {
-    padding: 200px;
+    padding: 150px;
     border: 1px solid #fff;
     cursor: pointer;
-
 }
 
 .category_div:hover {
@@ -51,3 +50,36 @@
     margin: 30px;
     color: white;
 }
+
+/* dialog css */
+
+/* dialog {
+    position: fixed;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 40vw;
+    top: 5rem;
+    left: 30vw;
+    background-color: #fff;
+}
+
+.log_in_form {
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.register-p {
+    color: blue;
+}
+
+.close_dialog {
+    align-self: flex-end;
+}
+
+.sign_in_dialog_button, .close_dialog {
+    max-width: fit-content;
+} */
