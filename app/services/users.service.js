@@ -8,7 +8,8 @@ export const usersService = {
   logInUser,
   createUser,
 };
-let _currentUser;
+
+const CURRENT_USER_KEY = "currentUserID";
 
 async function getUsers() {
   try {
@@ -33,9 +34,12 @@ async function getUser(userId) {
   }
 }
 
-function getCurrentUser() {
-  console.log(_currentUser);
-  return _currentUser;
+async function getCurrentUser() {
+  if (localStorage.getItem(CURRENT_USER_KEY)) {
+    return await getUser(localStorage.getItem(CURRENT_USER_KEY));
+  } else {
+    throw new Error("No user is currently logged in");
+  }
 }
 
 async function validateUserName(userName) {
@@ -68,14 +72,14 @@ async function logInUser(userName, userPassword) {
     );
     if (result.data.length == 1) {
       if (result.data[0].password === userPassword) {
-        _currentUser = result.data[0];
-        console.log(_currentUser);
+        localStorage.setItem(CURRENT_USER_KEY, result.data[0].id);
         return true;
       }
     }
     return false;
   } catch (error) {
     console.log(error);
+    return false;
   }
 }
 
@@ -104,6 +108,5 @@ async function createUser(formData) {
     return result.data.length == 1;
   } catch (error) {
     console.log(error);
-}
-
+  }
 }
