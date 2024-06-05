@@ -3,9 +3,11 @@ export const ticketsService = {
   createTicket,
   validateSerialNumber,
   getTicketById,
+  purchaseTicket
 };
 
 const ticketsUrl = "http://localhost:8001/tickets";
+const purchasedTicketsUrl = "http://localhost:8001/purchasedTickets";
 
 async function createTicket(userId, ticketData) {
   try {
@@ -41,6 +43,24 @@ async function getTicketById(id) {
     console.error("Error fetching ticket by ID:", error);
   }
 }
+async function purchaseTicket(ticket, userID) {
+  try {
+    const purchaseResult = await axios.post(purchasedTicketsUrl, {
+      ...ticket,
+      userId: userID,
+      isonsale: false,
+    });
+    console.log(purchaseResult.data);
+    const ticketResult = await axios.patch(`${ticketsUrl}/${ticket.id}`, {
+      isonsale: false,
+    });
+    console.log(ticketResult.data);
+    return true;
+  } catch (error) {
+    console.log(error);
+    console.error("Error creating ticket and updating user:", error);
+  }
+}
 
 async function paginateTickets(
   pageNum,
@@ -72,14 +92,14 @@ async function paginateTickets(
     temp = temp.slice(0, ticketsPerPage);
     console.log({
       tickets: temp.map((ticket) => {
-        return { ...ticket, user: ticket.user.userInfo };
+        return { ...ticket, user: ticket.user?.userInfo };
       }),
       currentPageNum: pageNum - 1,
       maxPages: maxPages,
     });
     return {
       tickets: temp.map((ticket) => {
-        return { ...ticket, user: ticket.user.userInfo };
+        return { ...ticket, user: ticket.user?.userInfo };
       }),
       currentPageNum: pageNum - 1,
       maxPages: maxPages,

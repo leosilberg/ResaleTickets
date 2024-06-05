@@ -13,7 +13,7 @@ let _currentUser;
 async function getUsers() {
   try {
     const result = await axios.get(
-      "http://localhost:8001/users?_embed=tickets"
+      "http://localhost:8001/users?_embed=tickets&_embed=purchasedTickets"
     );
     console.log(result.data);
     return result.data;
@@ -24,7 +24,7 @@ async function getUsers() {
 async function getUser(userId) {
   try {
     const result = await axios.get(
-      `http://localhost:8001/users/${userId}?_embed=tickets`
+      `http://localhost:8001/users/${userId}?_embed=tickets&_embed=purchasedTickets`
     );
     console.log(result.data);
     return result.data;
@@ -64,7 +64,7 @@ async function logInUser(userName, userPassword) {
   console.log(userName, userPassword);
   try {
     const result = await axios.get(
-      `http://localhost:8001/users?username=${userName}&_embed=tickets`
+      `http://localhost:8001/users?username=${userName}&_embed=tickets&_embed=purchasedTickets`
     );
     if (result.data.length == 1) {
       if (result.data[0].password === userPassword) {
@@ -104,4 +104,5 @@ async function createUser(formData) {
   } catch (error) {
     console.log(error);
   }
-} 
+}
+getUser("user2");
