@@ -26,9 +26,8 @@ function displayTickets(tickets, ticketContainer) {
                       ${sellerInfo}
                   </div >
             <div class="ticket_action">
-                <a href="../singleTicket/singleTicket.html?id=${
-                  ticket.id
-                }" class="see_tickets">See tickets</a>`;
+                <a href="../singleTicket/singleTicket.html?id=${ticket.id
+        }" class="see_tickets">See tickets</a>`;
       ticketContainer.appendChild(ticketElement);
     });
   }
