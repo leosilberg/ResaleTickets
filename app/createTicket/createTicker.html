@@ -11,9 +11,42 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="./createTicket.css">
   </head>
-  <body></body>
+  <body>
+
+    <div class="main">
+      <form class="create_ticket_form">
+        <div><h1 class="create_ticket_h1">Create a ticket</h1></div>
+        <div class="label_and_input">
+        <label for="title">Ticket Title:</label>
+        <input type="text" id="title" name="title" placeholder="Title">
+      </div>
+      <div class="label_and_input">
+        <label for="date">Date :</label>
+        <input type="text" id="date" name="date" placeholder="Date">
+      </div>
+      <div class="label_and_input">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" placeholder="Ticket price" min="0">
+      </div>
+      <div class="label_and_input">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="location">
+      </div>
+      <div class="label_and_input">
+        <label for="serialnumber">Serial Number:</label>
+        <input type="text" id="serialnumber" name="serialnumber" placeholder="Serial Number">
+      </div>
+        <input type="submit" value="Submit">
+      </form> 
+    </div>
+
+  </body>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
     integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
