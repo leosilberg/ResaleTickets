@@ -7,6 +7,7 @@ export const usersService = {
   validateEmail,
   logInUser,
   createUser,
+  signOut,
 };
 
 const CURRENT_USER_KEY = "currentUserID";
@@ -104,4 +105,8 @@ async function createUser(formData) {
   } catch (error) {
     console.log(error);
   }
+}
+
+function signOut() {
+  localStorage.removeItem(CURRENT_USER_KEY);
 }

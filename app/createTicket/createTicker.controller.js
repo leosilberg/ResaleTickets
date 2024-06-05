@@ -1,5 +1,6 @@
 import { ticketsService } from "../services/tickets.service.js";
 import { usersService } from "../services/users.service.js";
+import { navbarServices } from "../services/navbar.service.js";
 
 window.onload = onInit;
 let currentUser;
@@ -26,7 +27,7 @@ async function onTicketSubmit() {
     const ticketData = new FormData(formElem);
     console.log(currentUser);
     ticketsService.createTicket(currentUser.id, ticketData);
-
+    navbarServices.goToUserProfile();
   } else {
     console.log("Serial number is taken");
   }
