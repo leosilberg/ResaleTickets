@@ -1,12 +1,13 @@
+//! npx json-server --watch "../data/test-data.json"
 export const usersService = {
   getUsers,
   getUser,
   getCurrentUser,
   validateUserName,
   validateEmail,
-  logInUser
+  logInUser,
 };
-
+("../../data/test-data.json");
 let _currentUser;
 
 async function getUsers() {
@@ -56,16 +57,22 @@ async function validateEmail(email) {
     return result.data.length == 0;
   } catch (error) {
     console.log(error);
+    return false;
   }
 }
 async function logInUser(userName, userPassword) {
+  console.log(userName, userPassword);
   try {
     const result = await axios.get(
-      `http://localhost:8001/users?username=${userName}&password=${userPassword}`
+      `http://localhost:8001/users?username=${userName}&_embed=tickets`
     );
-    console.log(result.data.length == 1);
-    _currentUser = result.data;
-    return result.data.length == 1;
+    if (result.data.length == 1) {
+      if (result.data[0].password === userPassword) {
+        _currentUser = result.data;
+        return true;
+      }
+    }
+    return false;
   } catch (error) {
     console.log(error);
   }
