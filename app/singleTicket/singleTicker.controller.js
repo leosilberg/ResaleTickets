@@ -1,4 +1,5 @@
 import { ticketsService } from "../services/tickets.service.js";
+import { navBarHandler } from "../services/navbar.service.js";
 
 const button = document.querySelector(".button");
 const elemTicketCardContainer = document.querySelector(
