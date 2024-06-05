@@ -4,6 +4,10 @@ const urlObj = new URL(window.location.href);
 const params = new URLSearchParams(urlObj.searchParams);
 const ticketID = params.get("id");
 
+export const singelTicket = {
+  displayTicketInfo
+};
+
 const button = document.querySelector(".button");
 const deleteButton = document.querySelector(".delete");
 
