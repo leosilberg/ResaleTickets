@@ -11,6 +11,7 @@
     padding: 150px;
     border: 1px solid #fff;
     cursor: pointer;
+    transition: 0.4s;
 }
 
 .category_div:hover {
@@ -45,10 +46,20 @@
     background-repeat: no-repeat;
 }
 
+.about_us h2 {
+    font-size: 24px;
+}
+
 .about_us {
+    font-size: 20px;
+    line-height: 1.6;
     margin-top: 40px;
     margin: 30px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
 }
 
 /* dialog css */
