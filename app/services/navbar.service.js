@@ -4,7 +4,11 @@ const signInHandler = () => {
   document.querySelector(".sign_in").onclick = () => {
     document.querySelector("#logInDialog").open = true;
   };
+  document.querySelector(".close_dialog").onclick = () => {
+    document.querySelector("#logInDialog").open = false;
+  };
 };
+
 const loginHandler = () => {
   const logInFormElem = document.querySelector("#logInForm");
   logInFormElem.addEventListener("submit", (e) => {
