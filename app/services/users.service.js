@@ -34,6 +34,7 @@ async function getUser(userId) {
 }
 
 function getCurrentUser() {
+  console.log(_currentUser);
   return _currentUser;
 }
 
@@ -61,14 +62,14 @@ async function validateEmail(email) {
   }
 }
 async function logInUser(userName, userPassword) {
-  console.log(userName, userPassword);
   try {
     const result = await axios.get(
       `http://localhost:8001/users?username=${userName}&_embed=tickets&_embed=purchasedTickets`
     );
     if (result.data.length == 1) {
       if (result.data[0].password === userPassword) {
-        _currentUser = result.data;
+        _currentUser = result.data[0];
+        console.log(_currentUser);
         return true;
       }
     }
@@ -103,6 +104,6 @@ async function createUser(formData) {
     return result.data.length == 1;
   } catch (error) {
     console.log(error);
-  }
 }
-getUser("user2");
+
+}
