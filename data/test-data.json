@@ -44,17 +44,6 @@
   "purchasedTickets": [],
   "tickets": [
     {
-      "id": "ticket1",
-      "userId": "user1",
-      "category": "sports",
-      "date": "2024-06-15",
-      "title": "Football Match",
-      "price": 50,
-      "location": "Stadium A",
-      "serialnumber": "123548758412",
-      "isonsale": true
-    },
-    {
       "id": "ticket2",
       "userId": "user2",
       "category": "concert",

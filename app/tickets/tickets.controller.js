@@ -25,7 +25,7 @@ async function loadTickets() {
     console.log(elemSearch.value);
     ticketsPage = await ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearch.value, "");
     totalPageNumber = ticketsPage.maxPages;
-    currentPageNumber = ticketsPage.currentPageNum;
+    // currentPageNumber = ticketsPage.currentPageNum;
     console.log(ticketsPage.maxPages);
     displayTickets(ticketsPage.tickets);
 }
