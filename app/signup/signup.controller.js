@@ -1,4 +1,4 @@
-import { userService } from "../services/users.service";
+import { usersService } from "../services/users.service.js";
 const formElem = document.querySelector("#signUpForm");
 window.onload = onInit;
 
@@ -9,16 +9,20 @@ function onInit() {
   });
 }
 
-function onUserSubmit() {
-  const username = formElem.username;
-  const email = formElem.email;
-  const validUsername = userService.validateUserName(username);
-  const validEmail = userService.validateEmail(email);
-  if (validUsername && validEmail) {
-    const userData = new FormData(formElem);
-    userService.createUser(userData);
-  } else {
-    // if(!validUsername) toasterError userName is already taken
-    // else toasterError Email is already taken
+async function onUserSubmit() {
+  const username = formElem.username.value;
+  const email = formElem.email.value;
+  try {
+    const validUsername = await usersService.validateUserName(username);
+    const validEmail = await usersService.validateEmail(email);
+    if (validUsername && validEmail) {
+      const userData = new FormData(formElem);
+      usersService.createUser(userData);
+    } else {
+      if (!validUsername) console.log("invalid userName");
+      else console.log("invalid email");
+    }
+  } catch (err) {
+    console.log(err);
   }
 }
