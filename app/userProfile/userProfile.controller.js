@@ -7,7 +7,9 @@ import { renderService } from "../services/render.service.js";
 // const userID = params.get("id");
 let currentUser;
 const elemUserProfile = document.querySelector(".user_profile");
-const elemUserTicketsOnSale = document.querySelector(".tickets_on_sale_by_me_list");
+const elemUserTicketsOnSale = document.querySelector(
+  ".tickets_on_sale_by_me_list"
+);
 const elemUserTicketsSold = document.querySelector(".tickets_sold_by_me_table");
 const elemActionHistory = document.querySelector(".action_history_table");
 
@@ -16,7 +18,7 @@ window.onload = onInit;
 async function onInit() {
   currentUser = await navbarServices.checkLogInStatus();
   window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
-  // window.displayActionHistory = displayActionHistory;
+  window.onSignOut = onSignOut;
   elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}</h2>
             <div class="user_info_wrapper">
             <p>First Name: ${currentUser.userInfo.fname}</p>
@@ -68,4 +70,9 @@ async function displayTicketsOnSaleByMe() {
   //   });
 
   // elemUserTicketsOnSale.appendChild(table);
+}
+
+function onSignOut() {
+  usersService.signOut();
+  window.location.assign("../home/index.html");
 }
