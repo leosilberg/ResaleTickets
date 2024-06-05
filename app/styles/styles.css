@@ -62,7 +62,7 @@ body {
   align-items: center;
 }
 
-.nav_links .sign_in {
+button {
   background-color: #312757;
   border: none;
   padding: 10px 20px;
@@ -71,6 +71,28 @@ body {
   border-radius: 5px;
 }
 
-.nav_links .sign_in:hover {
+button:hover {
   background-color: #0056b3;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: left;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
 }
