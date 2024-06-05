@@ -81,63 +81,13 @@
       }
     },
     {
-      "id": "28c5",
-      "username": "ramin",
-      "password": "123",
+      "id": "fe17",
+      "username": "omer31101",
+      "password": "ab1234",
       "userInfo": {
-        "fname": "ramin",
-        "lname": "aliev",
-        "email": "ramin@gmail.com"
-      }
-    },
-    {
-      "id": "7e87",
-      "username": "ramin1",
-      "password": "123",
-      "userInfo": {
-        "fname": "ramin",
-        "lname": "aliev",
-        "email": "asd@gmail.com"
-      }
-    },
-    {
-      "id": "6afe",
-      "username": "ram",
-      "password": "123",
-      "userInfo": {
-        "fname": "ramin",
-        "lname": "aliev",
-        "email": "ra@gmail.com"
-      }
-    },
-    {
-      "id": "4c24",
-      "username": "sa",
-      "password": "123",
-      "userInfo": {
-        "fname": "rz",
-        "lname": "asd",
-        "email": "sadasd@ganasd"
-      }
-    },
-    {
-      "id": "f9a3",
-      "username": "za",
-      "password": "123",
-      "userInfo": {
-        "fname": "sdsad",
-        "lname": "sadasd",
-        "email": "asdasd@gmail.com"
-      }
-    },
-    {
-      "id": "8925",
-      "username": "we",
-      "password": "123",
-      "userInfo": {
-        "fname": "we",
-        "lname": "we",
-        "email": "we@gmail.com"
+        "fname": "Omer",
+        "lname": "Sidi",
+        "email": "omer.siwewei10@gmail.com"
       }
     }
   ],
@@ -496,25 +446,14 @@
       "isonsale": true
     },
     {
-      "id": "e10b",
-      "userId": "01f0",
+      "id": "f119",
+      "userId": "fe17",
       "category": "sports",
-      "date": "2024-06-06",
-      "title": "edwq",
-      "price": "55",
-      "location": "55",
-      "serialnumber": "545",
-      "isonsale": true
-    },
-    {
-      "id": "9e69",
-      "userId": "01f0",
-      "category": "sports",
-      "date": "2024-06-06",
-      "title": "Hapoel",
-      "price": "50",
+      "date": "2024-06-11",
+      "title": "qswq",
+      "price": "1111",
       "location": "Drive In",
-      "serialnumber": "54510215",
+      "serialnumber": "11231",
       "isonsale": true
     }
   ]

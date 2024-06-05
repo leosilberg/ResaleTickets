@@ -27,10 +27,18 @@
     font-weight: 600;
 }
 
-.header_and_button_wrapper button {
+#purchaseButton {
     background-color: rgb(112, 159, 101);
 }
 
-.header_and_button_wrapper button:hover {
+#purchaseButton:hover {
     background-color: rgb(103, 200, 81);
+}
+
+#deleteButton {
+    background-color: rgb(184, 54, 54);
+}
+
+#deleteButton:hover {
+    background-color: rgb(230, 28, 28);
 }
