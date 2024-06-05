@@ -97,3 +97,8 @@
     content: '❤️';
     margin-right: 5px;
 }
+
+.search_type_error_p {
+    color: #d9d8d8;
+    font-size: 1.2rem;
+}

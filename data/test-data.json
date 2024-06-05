@@ -99,109 +99,149 @@
         "lname": "Sidi",
         "email": "ome44r.sidi10@gmail.com"
       }
-    }
-  ],
-  "purchasedTickets": [],
-  "tickets": [
-    {
-      "id": "1",
-      "userId": "user1",
-      "category": "sports",
-      "date": "2024-04-10",
-      "title": "Football Match",
-      "price": 50,
-      "location": "Stadium A",
-      "serialnumber": "123456789012",
-      "isonsale": true
     },
     {
+      "id": "045e",
+      "username": "asdasd",
+      "password": "asasd",
+      "userInfo": {
+        "fname": "asdasd",
+        "lname": "asdasd",
+        "email": "aklsswd@gmal.cpm"
+      }
+    }
+  ],
+  "purchasedTickets": [
+    {
       "id": "2",
-      "userId": "user2",
+      "userId": "user1",
       "category": "concert",
       "date": "2024-05-11",
       "title": "Rock Concert",
       "price": 40,
       "location": "Concert Hall B",
       "serialnumber": "234567890123",
-      "isonsale": true
-    },
-    {
-      "id": "3",
-      "userId": "49fd",
-      "category": "movie",
-      "date": "2024-06-12",
-      "title": "Avengers: Endgame",
-      "price": 12,
-      "location": "Cinema C",
-      "serialnumber": "345678901234",
-      "isonsale": true
-    },
-    {
-      "id": "4",
-      "userId": "01f0",
-      "category": "theater",
-      "date": "2024-07-13",
-      "title": "Broadway Show",
-      "price": 70,
-      "location": "Theater D",
-      "serialnumber": "456789012345",
-      "isonsale": true
-    },
-    {
-      "id": "5",
-      "userId": "user1",
-      "category": "flight",
-      "date": "2024-08-14",
-      "title": "Flight to NYC",
-      "price": 150,
-      "location": "Airport E",
-      "serialnumber": "567890123456",
-      "isonsale": true
-    },
-    {
-      "id": "6",
-      "userId": "user2",
-      "category": "other",
-      "date": "2024-09-15",
-      "title": "Music Festival",
-      "price": 80,
-      "location": "Festival Grounds F",
-      "serialnumber": "678901234567",
-      "isonsale": true
+      "isonsale": false,
+      "user": {
+        "fname": "Jane",
+        "lname": "Smith",
+        "email": "jane.smith@example.com"
+      }
     },
     {
       "id": "7",
-      "userId": "49fd",
+      "userId": "user1",
       "category": "sports",
       "date": "2024-10-16",
       "title": "Basketball Game",
       "price": 60,
       "location": "Stadium A",
       "serialnumber": "789012345678",
-      "isonsale": true
+      "isonsale": false,
+      "user": {
+        "fname": "asdsafd",
+        "lname": "asfasf",
+        "email": "bitonnevo@gmail.com"
+      }
+    },
+    {
+      "id": "3",
+      "userId": "user1",
+      "category": "movie",
+      "date": "2024-06-12",
+      "title": "Avengers: Endgame",
+      "price": 12,
+      "location": "Cinema C",
+      "serialnumber": "345678901234",
+      "isonsale": false,
+      "user": {
+        "fname": "asdsafd",
+        "lname": "asfasf",
+        "email": "bitonnevo@gmail.com"
+      }
+    },
+    {
+      "id": "3",
+      "userId": "user1",
+      "category": "movie",
+      "date": "2024-06-12",
+      "title": "Avengers: Endgame",
+      "price": 12,
+      "location": "Cinema C",
+      "serialnumber": "345678901234",
+      "isonsale": false,
+      "user": {
+        "fname": "asdsafd",
+        "lname": "asfasf",
+        "email": "bitonnevo@gmail.com"
+      }
+    },
+    {
+      "id": "3",
+      "userId": "user1",
+      "category": "movie",
+      "date": "2024-06-12",
+      "title": "Avengers: Endgame",
+      "price": 12,
+      "location": "Cinema C",
+      "serialnumber": "345678901234",
+      "isonsale": false,
+      "user": {
+        "fname": "asdsafd",
+        "lname": "asfasf",
+        "email": "bitonnevo@gmail.com"
+      }
+    },
+    {
+      "id": "4",
+      "userId": "user1",
+      "category": "theater",
+      "date": "2024-07-13",
+      "title": "Broadway Show",
+      "price": 70,
+      "location": "Theater D",
+      "serialnumber": "456789012345",
+      "isonsale": false,
+      "user": {
+        "fname": "omer",
+        "lname": "sidi",
+        "email": "omer.sidi10@gmail.com"
+      }
+    },
+    {
+      "id": "6",
+      "userId": "user1",
+      "category": "other",
+      "date": "2024-09-15",
+      "title": "Music Festival",
+      "price": 80,
+      "location": "Festival Grounds F",
+      "serialnumber": "678901234567",
+      "isonsale": false,
+      "user": {
+        "fname": "Jane",
+        "lname": "Smith",
+        "email": "jane.smith@example.com"
+      }
     },
     {
       "id": "8",
-      "userId": "01f0",
+      "userId": "user1",
       "category": "concert",
       "date": "2024-11-17",
       "title": "Jazz Concert",
       "price": 50,
       "location": "Concert Hall B",
       "serialnumber": "890123456789",
-      "isonsale": true
-    },
-    {
-      "id": "9",
-      "userId": "user1",
-      "category": "movie",
-      "date": "2024-12-18",
-      "title": "Star Wars",
-      "price": 15,
-      "location": "Cinema C",
-      "serialnumber": "901234567890",
-      "isonsale": true
-    },
+      "isonsale": false,
+      "user": {
+        "fname": "omer",
+        "lname": "sidi",
+        "email": "omer.sidi10@gmail.com"
+      }
+    }
+  ],
+  "tickets": [
     {
       "id": "10",
       "userId": "user2",
@@ -236,17 +276,6 @@
       "isonsale": true
     },
     {
-      "id": "13",
-      "userId": "user1",
-      "category": "sports",
-      "date": "2024-04-22",
-      "title": "Baseball Game",
-      "price": 35,
-      "location": "Stadium A",
-      "serialnumber": "345612109876",
-      "isonsale": true
-    },
-    {
       "id": "14",
       "userId": "user2",
       "category": "concert",
@@ -277,17 +306,6 @@
       "price": 45,
       "location": "Theater D",
       "serialnumber": "678945432109",
-      "isonsale": true
-    },
-    {
-      "id": "17",
-      "userId": "user1",
-      "category": "flight",
-      "date": "2024-08-26",
-      "title": "Flight to Miami",
-      "price": 130,
-      "location": "Airport E",
-      "serialnumber": "789056543210",
       "isonsale": true
     },
     {
@@ -354,6 +372,28 @@
       "price": "2123",
       "location": "asdasd",
       "serialnumber": "2141241",
+      "isonsale": true
+    },
+    {
+      "id": "caf9",
+      "userId": "user1",
+      "category": "sports",
+      "date": "2024-06-05",
+      "title": "asdasdsad",
+      "price": "5",
+      "location": "asdasd",
+      "serialnumber": "123123124",
+      "isonsale": true
+    },
+    {
+      "id": "a42a",
+      "userId": "user1",
+      "category": "other",
+      "date": "2024-06-04",
+      "title": "asdasdasdasd",
+      "price": "12312",
+      "location": "asdasd",
+      "serialnumber": "123123123",
       "isonsale": true
     }
   ]
