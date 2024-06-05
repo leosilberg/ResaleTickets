@@ -4,7 +4,7 @@ export const usersService = {
   getCurrentUser,
   validateUserName,
   validateEmail,
-  logInUser
+  logInUser,
 };
 
 let _currentUser;
@@ -61,7 +61,7 @@ async function validateEmail(email) {
 async function logInUser(userName, userPassword) {
   try {
     const result = await axios.get(
-      `http://localhost:8001/users?username=${userName}&password=${userPassword}`
+      `http://localhost:8001/users?username=${userName}&password=${userPassword}&_embed=tickets`
     );
     console.log(result.data.length == 1);
     _currentUser = result.data;
