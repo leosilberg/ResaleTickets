@@ -1,7 +1,9 @@
 import { usersService } from "../services/users.service.js";
 
+const signInBtn = document.querySelector(".sign_in");
+
 const signInHandler = () => {
-  document.querySelector(".sign_in").onclick = () => {
+  signInBtn.onclick = () => {
     document.querySelector("#logInDialog").open = true;
   };
 };
@@ -12,8 +14,8 @@ const loginHandler = () => {
     onLogIn(logInFormElem);
   });
 };
-function goToUserProfile() {
-  const currentUser = usersService.getCurrentUser();
+async function goToUserProfile() {
+  const currentUser = await usersService.getCurrentUser();
   console.log(currentUser);
   window.location.assign(
     `../userProfile/userProfile.html?id=${currentUser.id}`
@@ -26,14 +28,35 @@ async function onLogIn(logInFormElem) {
   const isValidUser = await usersService.logInUser(username, password);
 
   if (isValidUser) {
-    navbarServices.goToUserProfile();
+    goToUserProfile();
   } else {
     console.log("username or password are incorrect!");
   }
 }
+function onGuestMode() {
+  signInHandler();
+  loginHandler();
+}
+function onUserMode() {
+  signInBtn.innerText = "Profile";
+  signInBtn.onclick = goToUserProfile;
+}
 
+async function checkLogInStatus() {
+  try {
+    //user logged in
+    const currentUser = await usersService.getCurrentUser();
+    onUserMode();
+    return currentUser;
+  } catch (error) {
+    //user not logged in
+    console.log(error);
+    onGuestMode();
+  }
+}
 export const navbarServices = {
   signInHandler,
   goToUserProfile,
   loginHandler,
+  checkLogInStatus,
 };

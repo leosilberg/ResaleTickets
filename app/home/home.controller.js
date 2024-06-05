@@ -2,11 +2,10 @@ window.onload = onInit;
 import { usersService } from "../services/users.service.js";
 import { navbarServices } from "../services/navbar.service.js";
 const logInFormElem = document.querySelector("#logInForm");
-function onInit() {
+async function onInit() {
   window.onSearchClick = onSearchClick;
   window.onImageClick = onImageClick;
-  navbarServices.signInHandler();
-  navbarServices.loginHandler();
+  await navbarServices.checkLogInStatus();
 }
 
 function onSearchClick() {

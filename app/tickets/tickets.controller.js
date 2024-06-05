@@ -1,4 +1,5 @@
 import { ticketsService } from "../services/tickets.service.js";
+import { navbarServices } from "../services/navbar.service.js";
 
 let currentPageNumber = 1;
 let totalPageNumber;
@@ -7,7 +8,7 @@ let elemSearch = document.getElementById("searchBar");
 let ticketsPage;
 window.onload = onInit;
 
-function onInit() {
+async function onInit() {
   const queryParams = new URLSearchParams(window.location.search);
   elemSearch.value = queryParams.get("search");
   window.searchFunction = searchFunction;
@@ -15,13 +16,27 @@ function onInit() {
   window.nextHandler = nextHandler;
   window.previousHandler = previousHandler;
   loadTickets();
+  currentUser = await navbarServices.checkLogInStatus();
 }
 async function searchFunction() {
+  currentPageNumber = 1;
+  loadTickets();
   currentPageNumber = 1;
   loadTickets();
 }
 
 async function loadTickets() {
+  console.log(elemSearch.value);
+  ticketsPage = await ticketsService.paginateTickets(
+    currentPageNumber,
+    maxNumberPerPage,
+    elemSearch.value,
+    ""
+  );
+  totalPageNumber = ticketsPage.maxPages;
+  // currentPageNumber = ticketsPage.currentPageNum;
+  console.log(ticketsPage.maxPages);
+  displayTickets(ticketsPage.tickets);
   console.log(elemSearch.value);
   ticketsPage = await ticketsService.paginateTickets(
     currentPageNumber,
@@ -78,8 +93,24 @@ async function nextHandler() {
     // displayTickets(ticketsPage.tickets)
     loadTickets();
   }
+  if (currentPageNumber < totalPageNumber) {
+    currentPageNumber++;
+    // ticketsPage = await ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, "");
+    // console.log(ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, ""));
+    // console.log(ticketsPage.tickets);
+    // displayTickets(ticketsPage.tickets)
+    loadTickets();
+  }
 }
 async function previousHandler() {
+  if (currentPageNumber > 1) {
+    currentPageNumber--;
+    // ticketsPage = await ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, "");
+    // console.log(ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, ""));
+    // console.log(ticketsPage.tickets);
+    // displayTickets(ticketsPage.tickets)
+    loadTickets();
+  }
   if (currentPageNumber > 1) {
     currentPageNumber--;
     // ticketsPage = await ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, "");

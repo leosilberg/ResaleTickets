@@ -1,9 +1,9 @@
 import { usersService } from "../services/users.service.js";
 import { navbarServices } from "../services/navbar.service.js";
 
-const urlObj = new URL(window.location.href);
-const params = new URLSearchParams(urlObj.searchParams);
-const userID = params.get("id");
+// const urlObj = new URL(window.location.href);
+// const params = new URLSearchParams(urlObj.searchParams);
+// const userID = params.get("id");
 let currentUser;
 const elemUserProfile = document.querySelector(".user_profile");
 const elemUserTicketsOnSale = document.querySelector(
@@ -15,17 +15,9 @@ const elemActionHistory = document.querySelector(".action_history_table");
 window.onload = onInit;
 
 async function onInit() {
-  navbarServices.signInHandler();
-  navbarServices.loginHandler();
+  currentUser = await navbarServices.checkLogInStatus();
   window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
   // window.displayActionHistory = displayActionHistory;
-  try {
-    currentUser = await usersService.getCurrentUser();
-    console.log(currentUser);
-  } catch (error) {
-    console.log(error);
-  }
-
   elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}</h2>
             <div class="user_info_wrapper">
             <p>First Name: ${currentUser.userInfo.fname}</p>
