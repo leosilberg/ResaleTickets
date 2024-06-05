@@ -1,5 +1,9 @@
 import { ticketsService } from "../services/tickets.service.js";
 
+export const singelTicket = {
+  displayTicketInfo
+};
+
 const button = document.querySelector(".button");
 const elemTicketCardContainer = document.querySelector(
   ".ticket_card_container"

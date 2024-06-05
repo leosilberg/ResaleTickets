@@ -2,6 +2,7 @@ window.onload = onInit;
 import { usersService } from "../services/users.service.js";
 const logInFormElem = document.querySelector("#logInForm");
 function onInit() {
+  window.onSearchClick = onSearchClick;
   logInFormElem.addEventListener("submit", (e) => {
     e.preventDefault();
     onLogIn();
@@ -16,4 +17,9 @@ async function onLogIn() {
   } else {
     console.log("username or password are incorrect!");
   }
+}
+
+function onSearchClick() {
+  const elemInputSearch = document.getElementById("searchBarValue");
+  location.assign(`../tickets/tickets.html?search=${elemInputSearch.value}`);
 }
