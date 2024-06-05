@@ -3,11 +3,12 @@ import { navBarHandler } from "../services/navbar.service.js";
 const urlObj = new URL(window.location.href);
 const params = new URLSearchParams(urlObj.searchParams);
 const userID = params.get("id");
-
+let currentUser;
 const elemUserProfile = document.querySelector(".user_profile");
 const elemUserTicketsOnSale = document.querySelector(
   ".tickets_on_sale_by_me_table"
 );
+const elemUserTicketsSold = document.querySelector(".tickets_sold_by_me_table");
 const elemActionHistory = document.querySelector(".action_history_table");
 
 window.onload = onInit;
@@ -16,7 +17,7 @@ async function onInit() {
   navBarHandler();
   window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
   // window.displayActionHistory = displayActionHistory;
-  const currentUser = await usersService.getUser(userID);
+  currentUser = await usersService.getUser(userID);
   elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}</h2>
             <div class="user_info_wrapper">
             <p>First Name: ${currentUser.userInfo.fname}</p>
@@ -29,48 +30,38 @@ async function onInit() {
 }
 
 async function displayTicketsOnSaleByMe() {
-  usersService
-    .getUser("user1")
-    .then((user) => {
-      const tickets = user.tickets;
-      console.log(tickets);
-      elemUserTicketsOnSale.innerHTML = ``;
-      const table = document.createElement("table");
+  const tickets = currentUser.tickets;
+  console.log(tickets);
+  elemUserTicketsOnSale.innerHTML = ``;
+  const table = document.createElement("table");
 
-      const headerRow = table.insertRow();
+  const headerRow = table.insertRow();
+  ["Category", "Date", "Title", "Price", "Location", "Serial Number"].forEach(
+    (headerText) => {
+      const th = document.createElement("th");
+      th.textContent = headerText;
+      headerRow.appendChild(th);
+    }
+  );
+
+  tickets
+    .filter((ticket) => ticket.isonsale)
+    .forEach((ticket) => {
+      console.log(ticket);
+      const row = table.insertRow();
       [
-        "Category",
-        "Date",
-        "Title",
-        "Price",
-        "Location",
-        "Serial Number",
-      ].forEach((headerText) => {
-        const th = document.createElement("th");
-        th.textContent = headerText;
-        headerRow.appendChild(th);
+        "category",
+        "date",
+        "title",
+        "price",
+        "location",
+        "serialnumber",
+      ].forEach((key) => {
+        const cell = row.insertCell();
+        cell.textContent = ticket[key];
       });
-
-      tickets.forEach((ticket) => {
-        console.log(ticket);
-        const row = table.insertRow();
-        [
-          "category",
-          "date",
-          "title",
-          "price",
-          "location",
-          "serialnumber",
-        ].forEach((key) => {
-          const cell = row.insertCell();
-          cell.textContent = ticket[key];
-        });
-      });
-
-      elemUserTicketsOnSale.appendChild(table);
-      console.log(user.tickets);
-    })
-    .catch((error) => {
-      console.error(error);
     });
+
+  elemUserTicketsOnSale.appendChild(table);
+  console.log(user.tickets);
 }
