@@ -3,9 +3,12 @@ export const ticketsService = {
   createTicket,
   validateSerialNumber,
   getTicketById,
+  purchaseTicket,
+  deleteTicket,
 };
 
 const ticketsUrl = "http://localhost:8001/tickets";
+const purchasedTicketsUrl = "http://localhost:8001/purchasedTickets";
 
 async function createTicket(userId, ticketData) {
   try {
@@ -32,13 +35,40 @@ async function validateSerialNumber(serialNumber) {
   return res.data.length === 0;
 }
 
+async function deleteTicket(ticketIdToDelete) {
+  try {
+    const result = await axios.delete(`${ticketsUrl}/${ticketIdToDelete}`);
+    return result.data;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 async function getTicketById(id) {
   try {
     const response = await axios.get(`${ticketsUrl}/${id}?_embed=user`);
     // console.log("Ticket:", response.data);
-    return { ...response.data, user: response.data.user.userInfo };
+    return { ...response.data, user: response.data.user?.userInfo };
   } catch (error) {
     console.error("Error fetching ticket by ID:", error);
+  }
+}
+async function purchaseTicket(ticket, userID) {
+  try {
+    const purchaseResult = await axios.post(purchasedTicketsUrl, {
+      ...ticket,
+      userId: userID,
+      isonsale: false,
+    });
+    console.log(purchaseResult.data);
+    const ticketResult = await axios.patch(`${ticketsUrl}/${ticket.id}`, {
+      isonsale: false,
+    });
+    console.log(ticketResult.data);
+    return true;
+  } catch (error) {
+    console.log(error);
+    console.error("Error creating ticket and updating user:", error);
   }
 }
 

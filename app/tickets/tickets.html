@@ -14,12 +14,20 @@
 
 <body>
   <div class="main">
+    <dialog id="logInDialog">
+      <a href="../signup/signup.html">Don't have an account? Click to register</a>
+      <form id="logInForm">
+        <label for="username">Username</label><input type="text" name="username" id="username" />
+        <label for="password">password</label><input type="password" name="password" id="password" />
+        <button>Sign In</button>
+      </form>
+    </dialog>
     <nav class="navbar">
       <div class="logo">
-        <a href="/home/index.html"><i class="fa-solid fa-ticket"></i> TicketResale</a>
+        <a href="../home/index.html"><i class="fa-solid fa-ticket"></i> TicketResale</a>
       </div>
       <div class="search_bar">
-        <input id="searchBar" type="text" placeholder="Search For Events...">
+        <input id="searchBar" type="text" placeholder="Search For Events..." />
         <a onclick="searchFunction()" class="search-button"><i class="fas fa-search"></i></a>
       </div>
       <div class="nav_links">
@@ -27,8 +35,7 @@
       </div>
     </nav>
     <div class="ticket_list_wrapper">
-      <div class="pagination">
-      </div>
+      <div class="pagination"></div>
 
       <div class="ticket_list"></div>
 
@@ -40,7 +47,6 @@
     </div> -->
     </div>
   </div>
-
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
   integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
