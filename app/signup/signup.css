@@ -25,8 +25,15 @@ body {
 
 .create_user_h1 {
     margin: 0;
+    margin-left: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.header_and_back_button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .label_and_input {
@@ -69,4 +76,10 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #639691;
+}
+
+.back-button {
+    margin: 0;
+    padding: 8px;
+    align-self: flex-end;
 }
