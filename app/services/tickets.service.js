@@ -72,14 +72,14 @@ async function paginateTickets(
     temp = temp.slice(0, ticketsPerPage);
     console.log({
       tickets: temp.map((ticket) => {
-        return { ...ticket, user: ticket.user.userInfo };
+        return { ...ticket, user: ticket.user?.userInfo };
       }),
       currentPageNum: pageNum - 1,
       maxPages: maxPages,
     });
     return {
       tickets: temp.map((ticket) => {
-        return { ...ticket, user: ticket.user.userInfo };
+        return { ...ticket, user: ticket.user?.userInfo };
       }),
       currentPageNum: pageNum - 1,
       maxPages: maxPages,

@@ -1,6 +1,6 @@
 import { usersService } from "../services/users.service.js";
 
-usersService
+
 
 const elemUserProfile = document.querySelector(".user_profile");
 const elemUserTicketsOnSale = document.querySelector(".tickets_on_sale_by_me_table");
@@ -10,7 +10,7 @@ window.onload = onInit;
 
 function onInit() {
     window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
-    window.displayActionHistory = displayActionHistory;
+    // window.displayActionHistory = displayActionHistory;
     usersService.getUser("user1")
         .then(user => {
             elemUserProfile.innerHTML =

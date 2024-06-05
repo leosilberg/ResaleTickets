@@ -26,14 +26,14 @@
     margin-top: 20px;
 }
 
-.user_tickets_info button {
+/* .user_tickets_info button {
     background-color: #007bff;
     border: none;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-}
+} */
 
 .user_tickets_info button:hover {
     background-color: #0056b3;
