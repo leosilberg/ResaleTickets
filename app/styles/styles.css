@@ -3,19 +3,21 @@
 
 :root {
   --navbar-background-color: #080416dc;
+  ;
 }
 
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   background-color: var(--navbar-background-color);
+  font-weight: 400;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px 20px;
   background-color: var(--navbar-background-color);
   color: #fff;
 }
@@ -23,7 +25,7 @@ body {
 .logo a {
   color: #fff;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -35,11 +37,12 @@ body {
 
 .search_bar input {
   color: #fff;
-  padding: 5px 10px 5px 40px;
+  padding: 10px 15px 10px 40px;
   font-size: 16px;
   background-color: #312757;
   border: 1px solid #fff;
   border-radius: 10px;
+  width: 20vw;
 }
 
 .search_bar a {
@@ -48,7 +51,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: #aaa;
+  color: #fff;
   font-size: 16px;
 }
 

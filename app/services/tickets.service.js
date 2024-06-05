@@ -16,6 +16,7 @@ async function createTicket(userId, ticketData) {
       userId: userId,
       category: ticketData.get("category"),
       date: ticketData.get("date"),
+      time: ticketData.get("time"),
       title: ticketData.get("title"),
       price: ticketData.get("price"),
       location: ticketData.get("location"),
