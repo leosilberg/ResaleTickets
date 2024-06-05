@@ -11,7 +11,7 @@ export const singelTicket = {
 };
 
 const button = document.querySelector(".button");
-const deleteButton = document.querySelector(".delete");
+const deleteButton = document.getElementById("deleteButton");
 const purchaseButton = document.getElementById("purchaseButton");
 
 const elemTicketCardContainer = document.querySelector(
@@ -26,14 +26,12 @@ window.onload = onInit;
 async function onInit() {
   ticket = await ticketsService.getTicketById(ticketID);
   window.purchaseTicket = purchaseTicket;
-  // window.currentUserValidation = currentUserValidation;
+  window.onDeleteTicket = onDeleteTicket;
+  // window. = currentUserValidation;
   displayTicketInfo();
 
-  deleteButton.addEventListener("click", async function (event) {
-    onDeleteTicket();
-    event.preventDefault();
-  });
 
+  
   const currentUser = await navbarServices.checkLogInStatus();
   window.onSearchClick = onSearchClick;
 }
@@ -45,8 +43,8 @@ function onSearchClick() {
 
 async function onDeleteTicket() {
   try {
-    const res = await ticketsService.deleteTicket(ticket.id);
-    console.log(res);
+    await ticketsService.deleteTicket(ticket.id);
+    navbarServices.goToUserProfile();
   } catch (err) {
     console.log(err);
   }
@@ -64,9 +62,9 @@ async function purchaseTicket() {
 async function displayTicketInfo() {
   let actionButton;
   if (!(await currentUserValidation(ticket))) {
-    actionButton = `<button id="purchaseButton"> <i class="fa-solid fa-cart-shopping"></i> Buy</button>`;
+    actionButton = `<button id="purchaseButton" onclick="purchaseTicket()"> <i class="fa-solid fa-cart-shopping"></i> Buy</button>`;
   } else {
-    actionButton = `<button id="deleteButton">  Delete</button>`;
+    actionButton = `<button id="deleteButton" onclick="onDeleteTicket()"><i class="fa-solid fa-trash-can"></i>  Delete</button>`;
   }
 
   // ticket = await ticketsService.getTicketById(ticketID);
@@ -89,10 +87,10 @@ function openPaymentDetails() {
 }
 
 async function currentUserValidation(ticket) {
-  console.log(ticket);
+  console.log(ticket.userId);
   currentUser = await usersService.getCurrentUser();
   console.log(currentUser);
-  if (ticket === currentUser) {
+  if (ticket.userId === currentUser.id) {
     return true;
   } else {
     return false;
