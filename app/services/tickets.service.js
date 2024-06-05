@@ -114,6 +114,3 @@ async function paginateTickets(
     console.log(error);
   }
 }
-
-paginateTickets(1, 3, "foot", "");
-paginateTickets(1, 3, "", "");
