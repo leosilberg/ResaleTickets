@@ -4,16 +4,33 @@
 }
 
 .ticket_card_container {
+    height: 50vh;
+    width: 30vw;
     background-color: rgb(202, 202, 184);
     border-radius: 5px;
     padding: 10px;
     display: flex;
-    gap: 10px;
+    gap: 35px;
     display: flex;
     flex-direction: column;
+}
+
+.header_and_button_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .ticket_card_container h2 {
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.header_and_button_wrapper button {
+    background-color: rgb(112, 159, 101);
+}
+
+.header_and_button_wrapper button:hover {
+    background-color: rgb(103, 200, 81);
 }

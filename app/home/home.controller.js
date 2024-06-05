@@ -4,6 +4,7 @@ import { navbarServices } from "../services/navbar.service.js";
 const logInFormElem = document.querySelector("#logInForm");
 function onInit() {
   window.onSearchClick = onSearchClick;
+  window.onImageClick = onImageClick;
   navbarServices.signInHandler();
   navbarServices.loginHandler();
 }
@@ -11,4 +12,7 @@ function onInit() {
 function onSearchClick() {
   const elemInputSearch = document.getElementById("searchBarValue");
   location.assign(`../tickets/tickets.html?search=${elemInputSearch.value}`);
+}
+function onImageClick(category) {
+  location.assign(`../tickets/tickets.html?search=${category}`);
 }

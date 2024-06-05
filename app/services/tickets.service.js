@@ -81,10 +81,12 @@ async function paginateTickets(
   try {
     let temp = [];
     let maxPages = Number.MAX_SAFE_INTEGER;
-    while (temp.length < ticketsPerPage && pageNum <= maxPages) {
-      console.log(pageNum);
+    let currentPageNum = pageNum;
+    let startPage;
+    while (temp.length < ticketsPerPage && currentPageNum <= maxPages) {
+      console.log(currentPageNum);
       const result = await axios.get(
-        `${ticketsUrl}?_embed=user&_sort=${sortOrder}&_page=${pageNum}&_per_page=${ticketsPerPage}`
+        `${ticketsUrl}?_embed=user&_sort=${sortOrder}&_page=${currentPageNum}&_per_page=${ticketsPerPage}`
       );
 
       temp = temp.concat(
@@ -97,22 +99,15 @@ async function paginateTickets(
         })
       );
       maxPages = result.data.pages;
-      pageNum++;
+      currentPageNum++;
     }
     temp = temp.slice(0, ticketsPerPage);
-    console.log({
-      tickets: temp.map((ticket) => {
-        return { ...ticket, user: ticket.user?.userInfo };
-      }),
-      currentPageNum: pageNum - 1,
-      maxPages: maxPages,
-    });
     return {
       tickets: temp.map((ticket) => {
         return { ...ticket, user: ticket.user?.userInfo };
       }),
-      currentPageNum: pageNum - 1,
-      maxPages: maxPages,
+      currentPageNum: (temp.length < ticketsPerPage && pageNum === 1) ? 1 : currentPageNum - 1,
+      maxPages: (temp.length < ticketsPerPage && pageNum === 1) ? 1 : maxPages,
     };
   } catch (error) {
     console.log(error);

@@ -2,7 +2,7 @@ import { ticketsService } from "../services/tickets.service.js";
 
 let currentPageNumber = 1;
 let totalPageNumber;
-let maxNumberPerPage = 5;
+const maxNumberPerPage = 5;
 let elemSearch = document.getElementById("searchBar");
 let ticketsPage;
 window.onload = onInit;
@@ -25,7 +25,7 @@ async function loadTickets() {
     console.log(elemSearch.value);
     ticketsPage = await ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearch.value, "");
     totalPageNumber = ticketsPage.maxPages;
-    // currentPageNumber = ticketsPage.currentPageNum;
+    currentPageNumber = ticketsPage.currentPageNum;
     console.log(ticketsPage.maxPages);
     displayTickets(ticketsPage.tickets);
 }
@@ -49,16 +49,16 @@ function displayTickets(tickets) {
                 <div class="ticket_seller">seller: ${ticket.userId}</div>
             </div>
             <div class="ticket_action">
-                <a href="../singleTicket/singleTicket.html" class="see_tickets">See tickets</a>
+                <a href="../singleTicket/singleTicket.html?id=${ticket.id}" class="see_tickets">See tickets</a>
         `;
-    ticketContainer.appendChild(ticketElement);
-  });
+        ticketContainer.appendChild(ticketElement);
+    });
 }
 
 function formatDate(dateString) {
-  const options = { weekday: "short", month: "short", day: "2-digit" };
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", options).toUpperCase();
+    const options = { weekday: "short", month: "short", day: "2-digit" };
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", options).toUpperCase();
 }
 
 async function nextHandler() {
@@ -79,6 +79,5 @@ async function previousHandler() {
         // console.log(ticketsPage.tickets);
         // displayTickets(ticketsPage.tickets)
         loadTickets();
-
     }
 }

@@ -29,6 +29,16 @@
         "lname": "asfasf",
         "email": "bitonnevo@gmail.com"
       }
+    },
+    {
+      "id": "01f0",
+      "username": "omer3110",
+      "password": "ab1234",
+      "userInfo": {
+        "fname": "omer",
+        "lname": "sidi",
+        "email": "omer.sidi10@gmail.com"
+      }
     }
   ],
   "purchasedTickets": [],
@@ -68,6 +78,17 @@
     },
     {
       "id": "ticket4",
+      "userId": "user4",
+      "category": "movie",
+      "date": "2024-06-10",
+      "title": "Avengers: Endgame",
+      "price": 12,
+      "location": "Cinema B",
+      "serialnumber": "157123548054",
+      "isonsale": true
+    },
+    {
+      "id": "ticket82",
       "userId": "user4",
       "category": "movie",
       "date": "2024-06-10",
