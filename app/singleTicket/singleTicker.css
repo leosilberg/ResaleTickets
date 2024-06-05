@@ -1,0 +1,19 @@
+.main_ticket_card_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.ticket_card_container {
+    background-color: rgb(202, 202, 184);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket_card_container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
