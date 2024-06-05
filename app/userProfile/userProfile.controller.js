@@ -19,7 +19,13 @@ async function onInit() {
   navbarServices.loginHandler();
   window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
   // window.displayActionHistory = displayActionHistory;
-  currentUser = await usersService.getUser(userID);
+  try {
+    currentUser = await usersService.getCurrentUser();
+    console.log(currentUser);
+  } catch (error) {
+    console.log(error);
+  }
+
   elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}</h2>
             <div class="user_info_wrapper">
             <p>First Name: ${currentUser.userInfo.fname}</p>
