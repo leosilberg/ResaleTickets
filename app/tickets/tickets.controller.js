@@ -16,7 +16,7 @@ async function onInit() {
   window.nextHandler = nextHandler;
   window.previousHandler = previousHandler;
   loadTickets();
-  currentUser = await navbarServices.checkLogInStatus();
+  const currentUser = await navbarServices.checkLogInStatus();
 }
 async function searchFunction() {
   currentPageNumber = 1;
@@ -74,14 +74,14 @@ function displayTickets(tickets) {
                   ticket.id
                 }" class="see_tickets">See tickets</a>
         `;
-        ticketContainer.appendChild(ticketElement);
-    });
+    ticketContainer.appendChild(ticketElement);
+  });
 }
 
 function formatDate(dateString) {
-    const options = { weekday: "short", month: "short", day: "2-digit" };
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", options).toUpperCase();
+  const options = { weekday: "short", month: "short", day: "2-digit" };
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", options).toUpperCase();
 }
 
 async function nextHandler() {

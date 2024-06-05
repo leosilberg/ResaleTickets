@@ -20,13 +20,20 @@ let ticket;
 
 window.onload = onInit;
 
-function onInit() {
+async function onInit() {
   displayTicketInfo();
-
   deleteButton.addEventListener("click", async function (event) {
     onDeleteTicket();
     event.preventDefault();
   });
+
+  const currentUser = await navbarServices.checkLogInStatus();
+  window.onSearchClick = onSearchClick;
+}
+
+function onSearchClick() {
+  const elemInputSearch = document.getElementById("searchBar");
+  location.assign(`../tickets/tickets.html?search=${elemInputSearch.value}`);
 }
 
 async function onDeleteTicket() {

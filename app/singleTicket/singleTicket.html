@@ -13,6 +13,29 @@
 </head>
 
 <body>
+  <dialog id="logInDialog">
+    <form id="logInForm" class="log_in_form">
+      <button class="close_dialog">Close</button>
+      <label for="username">Username :</label><input type="text" name="username" id="username">
+      <label for="password">password :</label><input type="password" name="password" id="password">
+      <button class="sign_in_dialog_button">Sign In</button>
+      <a href="../signup/signup.html">Don't have an account? <span class="register-p">Click to register</span></a>
+    </form>
+  </dialog>
+
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../home/index.html"><i class="fa-solid fa-ticket"></i> TicketResale</a>
+    </div>
+    <div class="search_bar">
+      <input id="searchBar" type="text" placeholder="Search For Events..." />
+      <a onclick="onSearchClick()" class="search-button"><i class="fas fa-search"></i></a>
+    </div>
+    <div class="nav_links">
+      <button class="sign_in">Sign In</button>
+    </div>
+  </nav>
+
   <button class="button">Print Ticket</button>
   <button class="delete">Delete</button>
   <div class="main_ticket_card_wrapper">
