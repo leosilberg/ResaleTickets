@@ -1,3 +1,4 @@
-export const ticketsService={
-    getTicketById,createTicket
-}
+export const ticketsService = {
+  getTicketById,
+  createTicket,
+};
