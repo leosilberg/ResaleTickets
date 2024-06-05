@@ -1,5 +1,7 @@
 import { usersService } from "../services/users.service.js";
 import { navbarServices } from "../services/navbar.service.js";
+import { showToast } from "../services/toaster.service.js";
+
 const formElem = document.querySelector("#signUpForm");
 window.onload = onInit;
 
@@ -19,10 +21,13 @@ async function onUserSubmit() {
     if (validUsername && validEmail) {
       const userData = new FormData(formElem);
       await usersService.createUser(userData);
-      navbarServices.goToUserProfile();
+      showToast("User created successfully", "success");
+      setTimeout(() => {
+        navbarServices.goToUserProfile();
+      }, 1500);
     } else {
-      if (!validUsername) console.log("invalid userName");
-      else console.log("invalid email");
+      if (!validUsername) showToast("Sorry, username already taken", "error");
+      else showToast("Sorry, email already taken", "error");
     }
   } catch (err) {
     console.log(err);

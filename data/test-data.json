@@ -99,6 +99,16 @@
         "lname": "Sidi",
         "email": "ome44r.sidi10@gmail.com"
       }
+    },
+    {
+      "id": "045e",
+      "username": "asdasd",
+      "password": "asasd",
+      "userInfo": {
+        "fname": "asdasd",
+        "lname": "asdasd",
+        "email": "aklsswd@gmal.cpm"
+      }
     }
   ],
   "purchasedTickets": [
@@ -169,7 +179,7 @@
     },
     {
       "id": "6",
-      "userId": "user2",
+      "userId": "user1",
       "category": "other",
       "date": "2024-09-15",
       "time": "23:45",
@@ -193,7 +203,7 @@
     },
     {
       "id": "8",
-      "userId": "01f0",
+      "userId": "user1",
       "category": "concert",
       "date": "2024-11-17",
       "time": "13:15",
@@ -309,6 +319,28 @@
       "price": "500",
       "location": "Tel Aviv",
       "serialnumber": "123456852014",
+      "isonsale": true
+    },
+    {
+      "id": "caf9",
+      "userId": "user1",
+      "category": "sports",
+      "date": "2024-06-05",
+      "title": "asdasdsad",
+      "price": "5",
+      "location": "asdasd",
+      "serialnumber": "123123124",
+      "isonsale": true
+    },
+    {
+      "id": "a42a",
+      "userId": "user1",
+      "category": "other",
+      "date": "2024-06-04",
+      "title": "asdasdasdasd",
+      "price": "12312",
+      "location": "asdasd",
+      "serialnumber": "123123123",
       "isonsale": true
     }
   ]
