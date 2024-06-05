@@ -81,7 +81,40 @@
       }
     }
   ],
-  "purchasedTickets": [],
+  "purchasedTickets": [
+    {
+      "id": "ticket2",
+      "userId": "01f0",
+      "category": "concert",
+      "date": "2024-07-20",
+      "title": "Rock Concert",
+      "price": 40,
+      "location": "Concert Hall A",
+      "serialnumber": "15710218054",
+      "isonsale": false,
+      "user": {
+        "fname": "Jane",
+        "lname": "Smith",
+        "email": "jane.smith@example.com"
+      }
+    },
+    {
+      "id": "ticket2",
+      "userId": "01f0",
+      "category": "concert",
+      "date": "2024-07-20",
+      "title": "Rock Concert",
+      "price": 40,
+      "location": "Concert Hall A",
+      "serialnumber": "15710218054",
+      "isonsale": false,
+      "user": {
+        "fname": "Jane",
+        "lname": "Smith",
+        "email": "jane.smith@example.com"
+      }
+    }
+  ],
   "tickets": [
     {
       "id": "ticket2",
@@ -92,7 +125,7 @@
       "price": 40,
       "location": "Concert Hall A",
       "serialnumber": "15710218054",
-      "isonsale": true
+      "isonsale": false
     },
     {
       "id": "ticket3",
@@ -367,6 +400,50 @@
       "price": "400",
       "location": "Tel Aviv",
       "serialnumber": "7777777",
+      "isonsale": true
+    },
+    {
+      "id": "3ccf",
+      "userId": "testUser",
+      "category": "sports",
+      "date": "2024-06-20",
+      "title": "Hapoel Tel Aviv - Hapoel Jerusalem",
+      "price": "60",
+      "location": "Drive In",
+      "serialnumber": "12",
+      "isonsale": true
+    },
+    {
+      "id": "1b16",
+      "userId": "testUser",
+      "category": "concert",
+      "date": "2024-06-07",
+      "title": "dvfgsfdf",
+      "price": "55",
+      "location": "Drive In",
+      "serialnumber": "342456423123454231234",
+      "isonsale": true
+    },
+    {
+      "id": "e10b",
+      "userId": "01f0",
+      "category": "sports",
+      "date": "2024-06-06",
+      "title": "edwq",
+      "price": "55",
+      "location": "55",
+      "serialnumber": "545",
+      "isonsale": true
+    },
+    {
+      "id": "9e69",
+      "userId": "01f0",
+      "category": "sports",
+      "date": "2024-06-06",
+      "title": "Hapoel",
+      "price": "50",
+      "location": "Drive In",
+      "serialnumber": "54510215",
       "isonsale": true
     }
   ]

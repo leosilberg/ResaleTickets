@@ -1,14 +1,13 @@
 import { usersService } from "../services/users.service.js";
 import { navbarServices } from "../services/navbar.service.js";
+import { renderService } from "../services/render.service.js";
 
 const urlObj = new URL(window.location.href);
 const params = new URLSearchParams(urlObj.searchParams);
 const userID = params.get("id");
 let currentUser;
 const elemUserProfile = document.querySelector(".user_profile");
-const elemUserTicketsOnSale = document.querySelector(
-  ".tickets_on_sale_by_me_table"
-);
+const elemUserTicketsOnSale = document.querySelector(".tickets_on_sale_by_me_list");
 const elemUserTicketsSold = document.querySelector(".tickets_sold_by_me_table");
 const elemActionHistory = document.querySelector(".action_history_table");
 
@@ -43,38 +42,38 @@ async function displayTicketsOnSaleByMe() {
   const tickets = currentUser.tickets;
   console.log(tickets);
   elemUserTicketsOnSale.innerHTML = ``;
-  const table = document.createElement("table");
+  renderService.displayTickets(tickets, elemUserTicketsOnSale);
 
-  const headerRow = table.insertRow();
-  ["Category", "Date", "Title", "Price", "Location", "Serial Number"].forEach(
-    (headerText) => {
-      const th = document.createElement("th");
-      th.textContent = headerText;
-      headerRow.appendChild(th);
-    }
-  );
+  // const headerRow = table.insertRow();
+  // ["Category", "Date", "Title", "Price", "Location", "Serial Number"].forEach(
+  //   (headerText) => {
+  //     const th = document.createElement("th");
+  //     th.textContent = headerText;
+  //     headerRow.appendChild(th);
+  //   }
+  // );
 
-  tickets
-    .filter((ticket) => ticket.isonsale)
-    .forEach((ticket) => {
-      console.log(ticket);
-      const row = table.insertRow();
-      [
-        "category",
-        "date",
-        "title",
-        "price",
-        "location",
-        "serialnumber",
-      ].forEach((key) => {
-        const cell = row.insertCell();
-        cell.textContent = ticket[key];
-      });
-      row.onclick = () =>
-        window.location.assign(
-          `../singleTicket/singleTicket.html?id=${ticket.id}`
-        );
-    });
+  // tickets
+  //   .filter((ticket) => ticket.isonsale)
+  //   .forEach((ticket) => {
+  //     console.log(ticket);
+  //     const row = table.insertRow();
+  //     [
+  //       "category",
+  //       "date",
+  //       "title",
+  //       "price",
+  //       "location",
+  //       "serialnumber",
+  //     ].forEach((key) => {
+  //       const cell = row.insertCell();
+  //       cell.textContent = ticket[key];
+  //     });
+  //     row.onclick = () =>
+  //       window.location.assign(
+  //         `../singleTicket/singleTicket.html?id=${ticket.id}`
+  //       );
+  //   });
 
-  elemUserTicketsOnSale.appendChild(table);
+  // elemUserTicketsOnSale.appendChild(table);
 }

@@ -1,4 +1,6 @@
 import { ticketsService } from "../services/tickets.service.js";
+import { renderService } from "../services/render.service.js";
+
 
 let currentPageNumber = 1;
 let totalPageNumber;
@@ -11,7 +13,6 @@ function onInit() {
   const queryParams = new URLSearchParams(window.location.search);
   elemSearch.value = queryParams.get("search");
   window.searchFunction = searchFunction;
-  window.displayTickets = displayTickets;
   window.nextHandler = nextHandler;
   window.previousHandler = previousHandler;
   loadTickets();
@@ -40,52 +41,19 @@ function displayTickets(tickets) {
   const ticketContainer = document.querySelector(".ticket_list");
   ticketContainer.innerHTML = ""; // Clear any previous content
   elemPaging.innerHTML = `<div id="pagesDesc">page ${currentPageNumber} out of ${totalPageNumber}</div><div id="pages_arrows"><button class="pageActionButton" onclick="previousHandler()"><</button><button class="pageActionButton" onclick="nextHandler()">></button></div>`;
-  tickets.forEach((ticket) => {
-    const ticketElement = document.createElement("div");
-    ticketElement.classList.add("ticket_card");
-    ticketElement.innerHTML = `
-        <div class="ticket_date">
-                <div>${formatDate(ticket.date)}</div>
-                <div>${ticket.time}</div>
-            </div>
-            <div class="ticket_info">
-            <div class="ticket_seller">Category: ${ticket.category}</div>
-                <div class="ticket_title">${ticket.title}</div>
-                <div class="ticket_location">${ticket.location}</div>
-                <div class="ticket_seller">seller: ${ticket.userId}</div>
-            </div>
-            <div class="ticket_action">
-                <a href="../singleTicket/singleTicket.html?id=${
-                  ticket.id
-                }" class="see_tickets">See tickets</a>
-        `;
-        ticketContainer.appendChild(ticketElement);
-    });
-}
+  renderService.displayTickets(tickets, ticketContainer);
 
-function formatDate(dateString) {
-    const options = { weekday: "short", month: "short", day: "2-digit" };
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", options).toUpperCase();
 }
 
 async function nextHandler() {
   if (currentPageNumber < totalPageNumber) {
     currentPageNumber++;
-    // ticketsPage = await ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, "");
-    // console.log(ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, ""));
-    // console.log(ticketsPage.tickets);
-    // displayTickets(ticketsPage.tickets)
     loadTickets();
   }
 }
 async function previousHandler() {
   if (currentPageNumber > 1) {
     currentPageNumber--;
-    // ticketsPage = await ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, "");
-    // console.log(ticketsService.paginateTickets(currentPageNumber, maxNumberPerPage, elemSearchValue, ""));
-    // console.log(ticketsPage.tickets);
-    // displayTickets(ticketsPage.tickets)
     loadTickets();
   }
 }
