@@ -5,26 +5,28 @@ body {
 }
 
 .main {
-    margin-top: 3rem;
+    margin-block: 2rem;
     color: white;
-    background-color: antiquewhite;
     display: flex;
     justify-content: center;
 }
 
 .create_ticket_form {
-    background-color: #201449dc;
+    background-color: #403075dc;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    border-radius: 4px;
     gap: 1rem;
     width: 70vw;
     padding: 1rem;
+    border-radius: 10px;
 }
 
 .create_ticket_h1 {
     margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .label_and_input {
@@ -39,7 +41,8 @@ body {
 }
 
 .label_and_input input[type="text"],
-.label_and_input input[type="number"] {
+.label_and_input input[type="number"],
+.label_and_input select {
     font-family: "Open Sans", sans-serif;
     padding: 8px;
     border: 1px solid #ccc;
@@ -66,5 +69,9 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #639691;
+}
+
+.back-button {
+    align-self: flex-end;
 }
 

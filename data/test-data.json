@@ -39,6 +39,46 @@
         "lname": "sidi",
         "email": "omer.sidi10@gmail.com"
       }
+    },
+    {
+      "id": "32a4",
+      "username": "NEVO",
+      "password": "12345",
+      "userInfo": {
+        "fname": "nevo",
+        "lname": "biton",
+        "email": "nevo@gasodf"
+      }
+    },
+    {
+      "id": "6037",
+      "username": "NEVOw",
+      "password": "12345",
+      "userInfo": {
+        "fname": "nevo",
+        "lname": "biton",
+        "email": "nevo@gasodf.com"
+      }
+    },
+    {
+      "id": "bf55",
+      "username": "nevobiton",
+      "password": "asdasd",
+      "userInfo": {
+        "fname": "nevo",
+        "lname": "biton",
+        "email": "nevus@gmai.com"
+      }
+    },
+    {
+      "id": "eaa7",
+      "username": "nevositon",
+      "password": "asdsw",
+      "userInfo": {
+        "fname": "nevoBVA",
+        "lname": "ASD",
+        "email": "nevo@gmail.com"
+      }
     }
   ],
   "purchasedTickets": [],
@@ -316,17 +356,6 @@
       "price": "",
       "location": "",
       "serialnumber": "1234",
-      "isonsale": true
-    },
-    {
-      "id": "360e",
-      "userId": "testUser",
-      "category": "",
-      "date": "",
-      "title": "",
-      "price": "",
-      "location": "",
-      "serialnumber": "1233",
       "isonsale": true
     },
     {

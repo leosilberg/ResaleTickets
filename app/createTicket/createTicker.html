@@ -21,30 +21,39 @@
 
     <div class="main">
       <form class="create_ticket_form">
+        <button onclick="window.location.href='../userProfile/userProfile.html'">Go to Example</button>
         <div><h1 class="create_ticket_h1">Create a ticket</h1></div>
         <div class="label_and_input">
         <label for="title">Ticket Title:</label>
-        <input type="text" id="title" name="title" placeholder="Title">
+        <input type="text" id="title" name="title" placeholder="Title" required>
       </div>
       <div class="label_and_input">
         <label for="date">Date :</label>
-        <input type="date" id="date" name="date" placeholder="Date">
+        <input type="date" id="date" name="date" placeholder="Date" required>
       </div>
       <div class="label_and_input">
         <label for="price">Price:</label>
-        <input type="number" id="price" name="price" placeholder="Ticket price" min="0">
+        <input type="number" id="price" name="price" placeholder="Ticket price" min="0" required>
       </div>
       <div class="label_and_input">
         <label for="location">Location:</label>
-        <input type="text" id="location" name="location" placeholder="location">
+        <input type="text" id="location" name="location" placeholder="location" required>
       </div>
       <div class="label_and_input">
         <label for="category">Category:</label>
-        <input type="text" id="category" name="category" placeholder="Category">
+        <select id="category" name="category" required>
+          <option value="">Select a category</option>
+          <option value="sports">Sports</option>
+          <option value="concert">Concert</option>
+          <option value="theater">Theater</option>
+          <option value="flight">Flight</option>
+          <option value="movie">Movie</option>
+          <option value="other">Other</option>
+      </select>
       </div>
       <div class="label_and_input">
         <label for="serialnumber">Serial Number:</label>
-        <input type="text" id="serialnumber" name="serialnumber" placeholder="Serial Number">
+        <input type="number" id="serialnumber" name="serialnumber" placeholder="Serial Number"  required>
       </div>
         <input type="submit" value="Submit">
       </form> 

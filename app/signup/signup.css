@@ -1,19 +1,72 @@
-main {
+body {
+    display: flex;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.main {
+    margin-block: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.create_user_form {
+    background-color: #403075dc;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    gap: 1rem;
+    width: 70vw;
+    padding: 1rem;
+    border-radius: 10px;
 }
 
-form#signUpForm {
-    height: 12em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+.create_user_h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-#signUpForm div {
+.label_and_input {
+    width: 50%;
     display: flex;
-    width: 17vw;
-    justify-content: space-between;
+    justify-content: space-between;  
+    align-items: center;
+}
+
+.label_and_input input {
+    width: 250px;
+}
+
+.label_and_input input[type="text"],
+.label_and_input input[type="password"],
+.label_and_input select {
+    font-family: "Open Sans", sans-serif;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.label_and_input input[type="text"]:focus,
+.label_and_input input[type="number"]:focus {
+    border-color: #93bbdf;
+    outline: none;
+}
+
+input[type="submit"] {
+    padding: 8px;
+    background-color: #4cafa7;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #639691;
 }

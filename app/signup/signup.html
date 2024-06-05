@@ -11,21 +11,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="signup.css">
   </head>
   <body>
-    <main>
-      <h1>Sign Up</h1>
-      <form id="signUpForm">
-        <div><label for="username">Username:</label><input type="text" required name="username" id="username"></div>
-        <div><label for="password">Password:</label><input type="password" required name="password" id="password"></div>
-        <div><label for="fName">First Name:</label><input type="text" required name="fname" id="fName"></div>
-        <div><label for="lName">Last Name:</label><input type="text" required name="lname" id="lName"></div>
-        <div><label for="email">Email:</label><input type="text" required name="email" id="email"></div>
-        <button type="none">Sign Up</button>
+    <div class="main">
+      <form  id="signUpForm" class="create_user_form">
+        <button class="back-button" onclick="window.location.href='../home/index.html'">Back to home page</button>
+        <div><h1 class="create_user_h1">Create new user</h1></div>
+        <div class="label_and_input"><label for="username">Username:</label><input type="text" placeholder="User name" required name="username" id="username"></div>
+        <div class="label_and_input"><label for="password">Password:</label><input type="password" placeholder="Password" required name="password" id="password"></div>
+        <div class="label_and_input"><label for="fName">First Name:</label><input type="text" placeholder="First name" required name="fname" id="fName"></div>
+        <div class="label_and_input"><label for="lName">Last Name:</label><input type="text" placeholder="Last name" required name="lname" id="lName"></div>
+        <div class="label_and_input"><label for="email">Email:</label><input type="text" placeholder="Email" required name="email" id="email"></div>
+        <input type="submit" value="Sign Up">
+        <!-- <button>Sign Up</button> -->
       </form>
-    </main>
+    </div>
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
     integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
