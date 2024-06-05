@@ -1,4 +1,5 @@
 import { usersService } from "../services/users.service.js";
+import { navbarServices } from "../services/navbar.service.js";
 const formElem = document.querySelector("#signUpForm");
 window.onload = onInit;
 
@@ -17,7 +18,8 @@ async function onUserSubmit() {
     const validEmail = await usersService.validateEmail(email);
     if (validUsername && validEmail) {
       const userData = new FormData(formElem);
-      usersService.createUser(userData);
+      await usersService.createUser(userData);
+      navbarServices.goToUserProfile();
     } else {
       if (!validUsername) console.log("invalid userName");
       else console.log("invalid email");
