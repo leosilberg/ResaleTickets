@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <link rel="stylesheet" href="./createTicket.css">
-  </head>
-  <body>
 
-    <div class="main">
-      <form class="create_ticket_form">
-        <button class="back-button" onclick="window.location.href='../userProfile/userProfile.html'">Back to profile</button>
-        <div><h1 class="create_ticket_h1">Create a ticket</h1></div>
-        <div class="label_and_input">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="./createTicket.css">
+</head>
+
+<body>
+  <div id="toasterContainer" class="toaster-container"></div>
+  <div class="main">
+    <form class="create_ticket_form">
+      <button class="back-button" onclick="window.location.href='../userProfile/userProfile.html'">Back to
+        profile</button>
+      <div>
+        <h1 class="create_ticket_h1">Create a ticket</h1>
+      </div>
+      <div class="label_and_input">
         <label for="title">Ticket Title:</label>
         <input type="text" id="title" name="title" placeholder="Title" required>
       </div>
@@ -44,27 +46,25 @@
         <select id="category" name="category" required>
           <option value="">Select a category</option>
           <option value="sports">Sports</option>
-          <option value="concert">Concert</option>
-          <option value="theater">Theater</option>
-          <option value="flight">Flight</option>
-          <option value="movie">Movie</option>
+          <option value="concerts">Concert</option>
+          <option value="theaters">Theater</option>
+          <option value="flights">Flight</option>
+          <option value="movies">Movie</option>
           <option value="other">Other</option>
-      </select>
+        </select>
       </div>
       <div class="label_and_input">
         <label for="serialnumber">Serial Number:</label>
-        <input type="number" id="serialnumber" name="serialnumber" placeholder="Serial Number"  required>
+        <input type="number" id="serialnumber" name="serialnumber" placeholder="Serial Number" required>
       </div>
-        <input type="submit" value="Submit">
-      </form> 
-    </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
-  </body>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
-    integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script type="module" src="./createTicker.controller.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
+  integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module" src="./createTicker.controller.js"></script>
+
 </html>
