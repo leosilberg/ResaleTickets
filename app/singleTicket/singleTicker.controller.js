@@ -29,7 +29,6 @@ async function onInit() {
   // window.currentUserValidation = currentUserValidation;
   displayTicketInfo();
 
-
   deleteButton.addEventListener("click", async function (event) {
     onDeleteTicket();
     event.preventDefault();
@@ -64,27 +63,25 @@ async function purchaseTicket() {
 
 async function displayTicketInfo() {
   let actionButton;
-  if (!await currentUserValidation(ticket)) {
-    actionButton = `<button id="purchaseButton"> <i class="fa-solid fa-cart-shopping"></i> Buy</button>`
+  if (!(await currentUserValidation(ticket))) {
+    actionButton = `<button id="purchaseButton"> <i class="fa-solid fa-cart-shopping"></i> Buy</button>`;
+  } else {
+    actionButton = `<button id="deleteButton">  Delete</button>`;
   }
-  else {
-    actionButton = `<button id="deleteButton">  Delete</button>`
-  }
-
 
   // ticket = await ticketsService.getTicketById(ticketID);
   console.log(ticket);
   elemTicketCardContainer.innerHTML = `
   <div class="header_and_button_wrapper">
   <h2><i class="fa-solid fa-ticket"></i>  ${ticket.title}</h2>
-  <div>${actionButton} </div>
   </div>
   <p>Seller : ${ticket.user?.fname}</p>
   <p>Category: ${ticket.category}</p>
   <p>Date: ${ticket.date}</p>
   <p>Price: $${ticket.price}</p>
   <p>Location: ${ticket.location}</p>
-  <p>Serial Number: ${ticket.serialnumber}</p>`;
+  <p>Serial Number: ${ticket.serialnumber}</p>
+  <div>${actionButton} </div>`;
 }
 
 function openPaymentDetails() {
@@ -96,9 +93,8 @@ async function currentUserValidation(ticket) {
   currentUser = await usersService.getCurrentUser();
   console.log(currentUser);
   if (ticket === currentUser) {
-    return true
-  }
-  else {
-    return false
+    return true;
+  } else {
+    return false;
   }
 }
