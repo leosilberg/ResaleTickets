@@ -1,3 +1,3 @@
 window.onload = onInit;
 
-function onInit() {}
+function onInit() { }

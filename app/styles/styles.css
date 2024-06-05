@@ -1,2 +1,76 @@
 @import "./variables.css";
 @import "./reset.css";
+:root {
+  --navbar-background-color: #080416dc;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--navbar-background-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--navbar-background-color);
+  color: #fff;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search_bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search_bar input {
+  color: #fff;
+  padding: 5px 10px 5px 40px;
+  font-size: 16px;
+  background-color: #312757;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  width: 30vh;
+}
+
+.search_bar button {
+  position: absolute;
+  left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.search_bar button i {
+  color: #fff;
+}
+
+.nav_links {
+  display: flex;
+  align-items: center;
+}
+
+.nav_links .sign_in {
+  background-color: #312757;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav_links .sign_in:hover {
+  background-color: #0056b3;
+}
