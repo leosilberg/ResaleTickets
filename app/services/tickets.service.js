@@ -72,6 +72,8 @@ async function purchaseTicket(ticket, userID) {
   }
 }
 
+let _gTickets = [];
+let prevSearchQuery = "";
 async function paginateTickets(
   pageNum,
   ticketsPerPage,
@@ -79,42 +81,39 @@ async function paginateTickets(
   sortOrder
 ) {
   try {
-    let temp = [];
-    let maxPages = Number.MAX_SAFE_INTEGER;
-    while (temp.length < ticketsPerPage && pageNum <= maxPages) {
-      console.log(pageNum);
+    if (searchQuery !== prevSearchQuery || _gTickets.length == 0) {
+      console.log("Fetch tickets");
+      prevSearchQuery = searchQuery;
       const result = await axios.get(
-        `${ticketsUrl}?_embed=user&_sort=${sortOrder}&_page=${pageNum}&_per_page=${ticketsPerPage}`
+        `${ticketsUrl}?_embed=user&_sort=${sortOrder}`
       );
+      console.log(result.data.length);
+      _gTickets = result.data.filter((ticket) => {
+        return (
+          ticket.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          ticket.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          ticket.category.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      });
 
-      temp = temp.concat(
-        result.data.data.filter((ticket) => {
-          return (
-            ticket.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            ticket.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            ticket.category.toLowerCase().includes(searchQuery.toLowerCase())
-          );
-        })
-      );
-      maxPages = result.data.pages;
-      pageNum++;
+      console.log(_gTickets.length);
     }
-    temp = temp.slice(0, ticketsPerPage);
-    console.log({
-      tickets: temp.map((ticket) => {
-        return { ...ticket, user: ticket.user?.userInfo };
-      }),
-      currentPageNum: pageNum - 1,
-      maxPages: maxPages,
-    });
+
+    const temp = _gTickets.slice(
+      (pageNum - 1) * ticketsPerPage,
+      pageNum * ticketsPerPage
+    );
+
     return {
       tickets: temp.map((ticket) => {
         return { ...ticket, user: ticket.user?.userInfo };
       }),
-      currentPageNum: pageNum - 1,
-      maxPages: maxPages,
+      maxPages: Math.ceil(_gTickets.length / ticketsPerPage),
     };
   } catch (error) {
     console.log(error);
   }
 }
+
+paginateTickets(1, 3, "foot", "");
+paginateTickets(1, 3, "", "");
