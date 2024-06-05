@@ -66,10 +66,10 @@ async function purchaseTicket() {
 async function displayTicketInfo() {
   let actionButton;
   if (!await currentUserValidation(ticket)) {
-    actionButton = `<button id="purchaseButton"> <i class="fa-solid fa-cart-shopping"></i> Buy</button>`
+    actionButton = `<button id="purchaseButton" onclick="purchaseTicket()"> <i class="fa-solid fa-cart-shopping"></i> Buy</button>`
   }
   else {
-    actionButton = `<button id="deleteButton" onclick="onDeleteTicket()">  Delete</button>`
+    actionButton = `<button id="deleteButton" onclick="onDeleteTicket()"><i class="fa-solid fa-trash-can"></i>  Delete</button>`
   }
 
 
