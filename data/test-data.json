@@ -56,14 +56,58 @@
       "isonsale": false
     },
     {
-      "id": "ticket4",
-      "userId": "user1",
-      "category": "concert",
-      "date": "2024-07-20",
-      "title": "Rock Concert",
-      "price": 40,
-      "location": "Concert Hall A",
-      "serialnumber": "15710218054",
+      "id": "d071",
+      "userId": "testUser",
+      "category": "",
+      "date": "",
+      "title": "",
+      "price": "",
+      "location": "",
+      "serialnumber": "158523548054",
+      "isonsale": true
+    },
+    {
+      "id": "44f6",
+      "userId": "testUser",
+      "category": "",
+      "date": "",
+      "title": "",
+      "price": "",
+      "location": "",
+      "serialnumber": "123",
+      "isonsale": true
+    },
+    {
+      "id": "cef1",
+      "userId": "testUser",
+      "category": "",
+      "date": "",
+      "title": "",
+      "price": "",
+      "location": "",
+      "serialnumber": "123",
+      "isonsale": true
+    },
+    {
+      "id": "c536",
+      "userId": "testUser",
+      "category": "",
+      "date": "",
+      "title": "",
+      "price": "",
+      "location": "",
+      "serialnumber": "1234",
+      "isonsale": true
+    },
+    {
+      "id": "360e",
+      "userId": "testUser",
+      "category": "",
+      "date": "",
+      "title": "",
+      "price": "",
+      "location": "",
+      "serialnumber": "1233",
       "isonsale": true
     }
   ]
