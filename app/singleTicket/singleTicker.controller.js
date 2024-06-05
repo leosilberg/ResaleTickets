@@ -24,8 +24,11 @@ let currentUser;
 window.onload = onInit;
 
 async function onInit() {
+  ticket = await ticketsService.getTicketById(ticketID);
   window.purchaseTicket = purchaseTicket;
+  // window.currentUserValidation = currentUserValidation;
   displayTicketInfo();
+
 
   deleteButton.addEventListener("click", async function (event) {
     onDeleteTicket();
@@ -60,12 +63,21 @@ async function purchaseTicket() {
 }
 
 async function displayTicketInfo() {
-  ticket = await ticketsService.getTicketById(ticketID);
+  let actionButton;
+  if (!await currentUserValidation(ticket)) {
+    actionButton = `<button id="purchaseButton"> <i class="fa-solid fa-cart-shopping"></i> Buy</button>`
+  }
+  else {
+    actionButton = `<button id="deleteButton">  Delete</button>`
+  }
+
+
+  // ticket = await ticketsService.getTicketById(ticketID);
   console.log(ticket);
   elemTicketCardContainer.innerHTML = `
   <div class="header_and_button_wrapper">
   <h2><i class="fa-solid fa-ticket"></i>  ${ticket.title}</h2>
-  <div><button id="purchaseButton" onclick="purchaseTicket()"> <i class="fa-solid fa-cart-shopping"></i> Buy</button> </div>
+  <div>${actionButton} </div>
   </div>
   <p>Seller : ${ticket.user?.fname}</p>
   <p>Category: ${ticket.category}</p>
@@ -77,4 +89,16 @@ async function displayTicketInfo() {
 
 function openPaymentDetails() {
   window.location.href = "../paymentDetails/paymentDetails.html";
+}
+
+async function currentUserValidation(ticket) {
+  console.log(ticket);
+  currentUser = await usersService.getCurrentUser();
+  console.log(currentUser);
+  if (ticket === currentUser) {
+    return true
+  }
+  else {
+    return false
+  }
 }

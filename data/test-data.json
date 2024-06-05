@@ -113,6 +113,17 @@
         "lname": "Smith",
         "email": "jane.smith@example.com"
       }
+    },
+    {
+      "id": "ticket6",
+      "userId": "01f0",
+      "category": "concert",
+      "date": "2024-07-25",
+      "title": "Jazz Festival",
+      "price": 35,
+      "location": "Open Air Venue",
+      "serialnumber": "45120315879",
+      "isonsale": false
     }
   ],
   "tickets": [
@@ -180,7 +191,7 @@
       "price": 35,
       "location": "Open Air Venue",
       "serialnumber": "45120315879",
-      "isonsale": true
+      "isonsale": false
     },
     {
       "id": "ticket7",
