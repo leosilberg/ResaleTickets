@@ -32,6 +32,7 @@ async function getUser(userId) {
     return result.data;
   } catch (error) {
     console.log(error);
+    throw new Error(userId + " not found");
   }
 }
 

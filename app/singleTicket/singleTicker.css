@@ -1,28 +1,29 @@
 .main_ticket_card_wrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ticket_card_container {
-    margin-top: 1rem;
-    min-width: 40vw;
-    background-color: rgb(202, 202, 184);
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
+  margin-top: 1rem;
+  min-width: 40vw;
+  background-color: rgb(202, 202, 184);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .ticket_card_container h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .action-button {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 /* .header_and_button_wrapper {
@@ -32,18 +33,17 @@
 } */
 
 #purchaseButton {
-    background-color: rgb(112, 159, 101);
+  background-color: rgb(112, 159, 101);
 }
 
 #purchaseButton:hover {
-    background-color: rgb(103, 200, 81);
+  background-color: rgb(103, 200, 81);
 }
 
 #deleteButton {
-    background-color: rgb(184, 54, 54);
+  background-color: rgb(184, 54, 54);
 }
 
 #deleteButton:hover {
-    background-color: rgb(230, 28, 28);
+  background-color: rgb(230, 28, 28);
 }
-

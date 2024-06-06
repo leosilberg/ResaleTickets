@@ -1,111 +1,115 @@
 .main_categories {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin-top: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
 }
 
 .category_div {
-    padding: 150px;
-    border: 1px solid #fff;
-    cursor: pointer;
-    transition: 0.4s;
+  padding: 150px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .category_div:hover {
-    border: 1px solid #fff;
-    box-shadow: 0px 0px 100px 0px rgba(255, 179, 179, 0.2);
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 100px 0px rgba(255, 179, 179, 0.2);
 }
 
 .category_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sports {
-    background-image: url(../images/sportsCategory.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../images/sportsCategory.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .concerts {
-    background-image: url(../images/concertsCategory.avif);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../images/concertsCategory.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .vacations {
-    background-image: url(../images/vacationsCategory.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../images/vacationsCategory.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .theater {
-    background-image: url(../images/Theater.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../images/Theater.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .movies {
-    background-image: url(../images/movies.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../images/movies.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .festivals {
-    background-image: url(../images/festivals.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../images/festivals.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about_us h2 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .about_us {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-top: 40px;
-    margin: 30px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-top: 40px;
+  margin: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
 }
 #carouselContainer {
-    display: flex;
-    overflow-x: hidden;
-    align-self: center;
-    width: 985px;
-    position: relative;
+  display: flex;
+  overflow-x: hidden;
+  align-self: center;
+  width: 985px;
+  position: relative;
 }
-.main_categories{
-    display: flex;
-    transition: transform 2s;
+.main_categories {
+  display: flex;
+  transition: transform 2s;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.carousel_btn{
-    position: absolute;
-    align-self: center;
-    z-index: 1;
+.carousel_btn {
+  position: absolute;
+  align-self: center;
+  z-index: 1;
+  top: 17em;
 }
 button#carousel_next_btn {
-    right: 0;
+  right: 10vw;
+}
+button#carousel_previous_btn {
+  left: 10vw;
 }
 
 /* dialog css */
