@@ -86,7 +86,7 @@ async function paginateTickets(
       console.log("Fetch tickets");
       prevSearchQuery = searchQuery;
       const result = await axios.get(
-        `${ticketsUrl}?_embed=user&_sort=${sortOrder}`
+        `${ticketsUrl}?_embed=user&_sort=${sortOrder}&isonsale=true`
       );
       console.log(result.data.length);
       _gTickets = result.data.filter((ticket) => {

@@ -139,6 +139,7 @@ app.post("/api/orders", async (req, res) => {
     // use the cart information passed from the front-end to calculate the order amount detals
     const { cart } = req.body;
     const { jsonResponse, httpStatusCode } = await createOrder(cart);
+    console.log(jsonResponse)
     res.status(httpStatusCode).json(jsonResponse);
   } catch (error) {
     console.error("Failed to create order:", error);
@@ -148,6 +149,7 @@ app.post("/api/orders", async (req, res) => {
 
 app.post("/api/orders/:orderID/capture", async (req, res) => {
   try {
+    console.log(req.params)
     const { orderID } = req.params;
     const { jsonResponse, httpStatusCode } = await captureOrder(orderID);
     res.status(httpStatusCode).json(jsonResponse);

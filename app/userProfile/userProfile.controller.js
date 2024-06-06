@@ -1,6 +1,7 @@
 import { usersService } from "../services/users.service.js";
 import { navbarServices } from "../services/navbar.service.js";
 import { renderService } from "../services/render.service.js";
+import { ticketsService } from "../services/tickets.service.js";
 
 // const urlObj = new URL(window.location.href);
 // const params = new URLSearchParams(urlObj.searchParams);
@@ -37,15 +38,17 @@ async function onInit() {
 }
 
 async function displayTicketsOnSaleByMe() {
-  const tickets = currentUser.tickets;
+  const tickets = currentUser.tickets.filter((ticket) => ticket.isonsale);
   console.log(tickets);
   elemUserTicketsOnSale.innerHTML = ``;
-  renderService.displayTickets(tickets, elemUserTicketsOnSale);
+  if (tickets.length != 0) {
+    renderService.displayTickets(tickets, elemUserTicketsOnSale);
+  }else{
+    elemUserTicketsOnSale.innerHTML="<p>You dont have any tickets on sale currently</p>"
+  }
 }
 
-function displayActionHistory() {
-
-}
+function displayActionHistory() {}
 
 function onSignOut() {
   usersService.signOut();

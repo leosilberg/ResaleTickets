@@ -1,8 +1,10 @@
+import { ticketsService } from "./tickets.service.js";
+import { navbarServices } from "./navbar.service.js";
 export const paymentsService = {
   loadPayPal,
 };
 
-async function loadPayPal(tickerId) {
+async function loadPayPal(ticket,userId) {
   window.paypal
     .Buttons({
       style: {
@@ -15,7 +17,7 @@ async function loadPayPal(tickerId) {
             "http://127.0.0.1:8888/api/orders",
             JSON.stringify({
               cart: {
-                ticketId: tickerId,
+                ticketId: ticket.id,
               },
             }),
             {
@@ -90,6 +92,12 @@ async function loadPayPal(tickerId) {
               orderData,
               JSON.stringify(orderData, null, 2)
             );
+            
+           const purchaseResult= await ticketsService.purchaseTicket(ticket,userId);
+           console.log(purchaseResult)
+            setTimeout(() => {
+              navbarServices.goToUserProfile();
+            }, 1500);
           }
         } catch (error) {
           console.error(error);

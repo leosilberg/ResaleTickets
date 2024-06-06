@@ -1,1 +1,98 @@
-{ "users": [], "purchasedTickets": [], "tickets": [] }
+{
+  "users": [
+    {
+      "id": "0d33",
+      "username": "ariel",
+      "password": "ariel12345",
+      "userInfo": {
+        "fname": "Ariel",
+        "lname": "Silberg",
+        "email": "ariels@gmail.com"
+      }
+    },
+    {
+      "id": "53c0",
+      "username": "Nevo",
+      "password": "neo12345",
+      "userInfo": {
+        "fname": "Nevo",
+        "lname": "B",
+        "email": "nevo@gmail.com"
+      }
+    }
+  ],
+  "purchasedTickets": [
+    {
+      "id": "9c6b",
+      "userId": "53c0",
+      "category": "concerts",
+      "date": "2024-06-07",
+      "time": "09:42",
+      "title": "Concert",
+      "price": "100",
+      "location": "Tel aviv",
+      "serialnumber": "123445365",
+      "isonsale": false,
+      "user": {
+        "fname": "Ariel",
+        "lname": "Silberg",
+        "email": "ariels@gmail.com"
+      }
+    },
+    {
+      "id": "f68b",
+      "userId": "53c0",
+      "category": "sports",
+      "date": "2024-06-19",
+      "time": "06:12",
+      "title": "Soccer",
+      "price": "100",
+      "location": "Tel Aviv",
+      "serialnumber": "654356768",
+      "isonsale": false,
+      "user": {
+        "fname": "Ariel",
+        "lname": "Silberg",
+        "email": "ariels@gmail.com"
+      }
+    }
+  ],
+  "tickets": [
+    {
+      "id": "9c6b",
+      "userId": "0d33",
+      "category": "concerts",
+      "date": "2024-06-07",
+      "time": "09:42",
+      "title": "Concert",
+      "price": "100",
+      "location": "Tel aviv",
+      "serialnumber": "123445365",
+      "isonsale": false
+    },
+    {
+      "id": "f68b",
+      "userId": "0d33",
+      "category": "sports",
+      "date": "2024-06-19",
+      "time": "06:12",
+      "title": "Soccer",
+      "price": "100",
+      "location": "Tel Aviv",
+      "serialnumber": "654356768",
+      "isonsale": false
+    },
+    {
+      "id": "f67b",
+      "userId": "0d33",
+      "category": "sports",
+      "date": "2024-06-19",
+      "time": "06:12",
+      "title": "Soccer",
+      "price": "100",
+      "location": "Tel Aviv",
+      "serialnumber": "654356768",
+      "isonsale": true
+    }
+  ]
+}

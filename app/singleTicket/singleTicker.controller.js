@@ -89,7 +89,8 @@ async function displayTicketInfo() {
   <p>Serial Number: ${ticket.serialnumber}</p>
   <div>${actionButton} </div>`;
   if (currentUserValidation(ticket)) {
-    await paymentsService.loadPayPal(ticket.id);
+    console.log(currentUser.id)
+    await paymentsService.loadPayPal(ticket,currentUser.id);
   }
 }
 
