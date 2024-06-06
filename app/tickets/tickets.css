@@ -42,11 +42,13 @@
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     /* cursor: pointer; */
 }
 
 .ticket_card:hover {
     background-color: #d9d8d8;
+    transform: translateX(-10px);
 }
 
 .ticket_date {
@@ -91,6 +93,14 @@
     font-size: 14px;
     display: flex;
     align-items: center;
+    padding: 4px;
+    background-color: #d0d0d3;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.see_tickets:hover {
+    background-color: #b0b0b3;
 }
 
 .see_tickets::before {
@@ -102,3 +112,38 @@
     color: #d9d8d8;
     font-size: 1.2rem;
 }
+
+@media screen and (max-width: 700px) {
+    .ticket_card { 
+        padding: 8px 15px;
+    }
+    .ticket_card div { 
+        font-size: 12px;
+    }
+    .ticket_date {
+        font-size: 12px;
+        padding-right: 30px;
+    }
+}
+  
+  @media screen and (max-width: 630px) {
+    .ticket_card { 
+        width: 90vw;
+    }
+    .ticket_list_wrapper {
+        margin-inline: 1rem;
+        width: 90vw;
+    }
+    .ticket_date {
+        padding-right: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 440px) {
+    .ticket_date div:first-child {
+        font-size: 10px;
+    }
+    .ticket_card div { 
+        font-size: 12px;
+    }
+  }
