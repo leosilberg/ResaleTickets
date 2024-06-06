@@ -4,7 +4,7 @@ export const paymentsService = {
   loadPayPal,
 };
 
-async function loadPayPal(ticket,userId) {
+async function loadPayPal(ticket, userId) {
   window.paypal
     .Buttons({
       style: {
@@ -92,9 +92,9 @@ async function loadPayPal(ticket,userId) {
               orderData,
               JSON.stringify(orderData, null, 2)
             );
-            
-           const purchaseResult= await ticketsService.purchaseTicket(ticket,userId);
-           console.log(purchaseResult)
+
+            const purchaseResult = await ticketsService.purchaseTicket(ticket, userId);
+            console.log(purchaseResult)
             setTimeout(() => {
               navbarServices.goToUserProfile();
             }, 1500);

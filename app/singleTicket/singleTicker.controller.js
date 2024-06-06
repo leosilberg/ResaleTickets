@@ -88,9 +88,16 @@ async function displayTicketInfo() {
   <p>Location: ${ticket.location}</p>
   <p>Serial Number: ${ticket.serialnumber}</p>
   <div>${actionButton} </div>`;
-  if (currentUserValidation(ticket)) {
+  if (currentUserValidation(ticket) && currentUser) {
     console.log(currentUser.id)
-    await paymentsService.loadPayPal(ticket,currentUser.id);
+    try {
+      await paymentsService.loadPayPal(ticket, currentUser.id);
+    } catch (e) {
+      console.log(e)
+    }
+  }
+  else {
+    elemTicketCardContainer.querySelector("div").innerText = "Please sign in to procceed!"
   }
 }
 
@@ -99,5 +106,5 @@ function openPaymentDetails() {
 }
 
 function currentUserValidation(ticket) {
-  return ticket.userId !== currentUser.id;
+  return ticket.userId !== currentUser?.id;
 }

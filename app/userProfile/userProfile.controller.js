@@ -43,12 +43,12 @@ async function displayTicketsOnSaleByMe() {
   elemUserTicketsOnSale.innerHTML = ``;
   if (tickets.length != 0) {
     renderService.displayTickets(tickets, elemUserTicketsOnSale);
-  }else{
-    elemUserTicketsOnSale.innerHTML="<p>You dont have any tickets on sale currently</p>"
+  } else {
+    elemUserTicketsOnSale.innerHTML = "<p>You dont have any tickets on sale currently</p>"
   }
 }
 
-function displayActionHistory() {}
+function displayActionHistory() { }
 
 function onSignOut() {
   usersService.signOut();
