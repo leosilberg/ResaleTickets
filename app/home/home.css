@@ -82,6 +82,31 @@
     gap: 10px;
     text-align: center;
 }
+#carouselContainer {
+    display: flex;
+    overflow-x: hidden;
+    align-self: center;
+    width: 985px;
+    position: relative;
+}
+.main_categories{
+    display: flex;
+    transition: transform 2s;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel_btn{
+    position: absolute;
+    align-self: center;
+    z-index: 1;
+}
+button#carousel_next_btn {
+    right: 0;
+}
 
 /* dialog css */
 

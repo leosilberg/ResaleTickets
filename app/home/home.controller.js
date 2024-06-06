@@ -5,6 +5,7 @@ import { showToast } from "../services/toaster.service.js";
 window.onload = onInit;
 const logInFormElem = document.querySelector("#logInForm");
 async function onInit() {
+  carouselInit();
   window.onSearchClick = onSearchClick;
   window.onImageClick = onImageClick;
   await navbarServices.checkLogInStatus();
@@ -23,6 +24,25 @@ function onImageClick(category) {
   location.assign(`../tickets/tickets.html?search=${category}`);
 }
 
+//Carousel handler
+function carouselInit() {
+  const prevBtn = document.getElementById("carousel_previous_btn");
+  const nextBtn = document.getElementById("carousel_next_btn");
+  const carouselElem = document.querySelector(".main_categories");
+
+  prevBtn.onclick = () => {
+    updateCarouselPosition("0px");
+  };
+
+  nextBtn.onclick = () => {
+    updateCarouselPosition("-1025px");
+  };
+
+  function updateCarouselPosition(position) {
+    const newTransformValue = `translateX(${position})`;
+    carouselElem.style.transform = newTransformValue;
+  }
+}
 
 // toaster
 
@@ -47,4 +67,3 @@ function onImageClick(category) {
 //     }
 //   }, 3000);
 // }
-
