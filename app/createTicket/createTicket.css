@@ -77,3 +77,37 @@ input[type="submit"]:hover {
     padding: 8px;
     align-self: flex-end;
 }
+
+
+
+@media screen and (max-width: 900px) {
+    .create_ticket_form {
+        gap: 1rem;
+        padding: 1rem;
+        font-size: 14px;
+    }
+
+    .label_and_input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .create_ticket_form {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .create_ticket_form {
+        width: 85vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .create_ticket_form {
+        width: 95vw;
+        font-size: 10px;
+        padding: 0.5rem;
+    }
+}
