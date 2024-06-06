@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="singleTicker.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../styles/styles.css" />
-  <link rel="stylesheet" href="singleTicker.css">
-</head>
+  <body>
+    <dialog id="logInDialog">
+      <form id="logInForm" class="log_in_form">
+        <button class="close_dialog">Close</button>
+        <label for="username">Username :</label
+        ><input type="text" name="username" id="username" />
+        <label for="password">password :</label
+        ><input type="password" name="password" id="password" />
+        <button class="sign_in_dialog_button">Sign In</button>
+        <a href="../signup/signup.html"
+          >Don't have an account?
+          <span class="register-p">Click to register</span></a
+        >
+      </form>
+    </dialog>
 
-<body>
-  <dialog id="logInDialog">
-    <form id="logInForm" class="log_in_form">
-      <button class="close_dialog">Close</button>
-      <label for="username">Username :</label><input type="text" name="username" id="username">
-      <label for="password">password :</label><input type="password" name="password" id="password">
-      <button class="sign_in_dialog_button">Sign In</button>
-      <a href="../signup/signup.html">Don't have an account? <span class="register-p">Click to register</span></a>
-    </form>
-  </dialog>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../home/index.html"
+          ><i class="fa-solid fa-ticket"></i> TicketResale</a
+        >
+      </div>
+      <div class="search_bar">
+        <input id="searchBar" type="text" placeholder="Search For Events..." />
+        <a onclick="onSearchClick()" class="search-button"
+          ><i class="fas fa-search"></i
+        ></a>
+      </div>
+      <div class="nav_links">
+        <button class="sign_in">Sign In</button>
+      </div>
+    </nav>
 
-  <nav class="navbar">
-    <div class="logo">
-      <a href="../home/index.html"><i class="fa-solid fa-ticket"></i> TicketResale</a>
+    <div class="main_ticket_card_wrapper">
+      <div class="ticket_card_container"></div>
+      <div id="paypal-button-container"></div>
     </div>
-    <div class="search_bar">
-      <input id="searchBar" type="text" placeholder="Search For Events..." />
-      <a onclick="onSearchClick()" class="search-button"><i class="fas fa-search"></i></a>
-    </div>
-    <div class="nav_links">
-      <button class="sign_in">Sign In</button>
-    </div>
-  </nav>
 
-  <div class="main_ticket_card_wrapper">
-    <div class="ticket_card_container">
-    </div>
-    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
+      integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AVPidALKqCXDlmAD5b2fxOymguJxoDfYdqXycj5NwoRb0UHq2tT46cdZYwa1gxSwRKsckSf2UPJ2rfGr&components=buttons&enable-funding=card&disable-funding=paylater,venmo"></script>
 
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
-  integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="module" src="./singleTicker.controller.js"></script>
-
+    <script type="module" src="./singleTicker.controller.js"></script>
+  </body>
 </html>

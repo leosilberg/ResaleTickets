@@ -3,9 +3,13 @@ import fetch from "node-fetch";
 import "dotenv/config";
 import path from "path";
 
+import cors from "cors";
+import axios from "axios";
+
 const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PORT = 8888 } = process.env;
 const base = "https://api-m.sandbox.paypal.com";
 const app = express();
+app.use(cors());
 
 // parse post params sent in body in json format
 app.use(express.json());
@@ -48,6 +52,17 @@ const createOrder = async (cart) => {
     cart
   );
 
+  let ticket;
+  try {
+    const url =
+      "http://localhost:8001/tickets/" + cart.ticketId + "?_embed=user";
+    const ticketResponse = await axios.get(url);
+    ticket = ticketResponse.data;
+    console.log(ticket);
+  } catch (error) {
+    throw new Error("Error finding ticket");
+  }
+
   const accessToken = await generateAccessToken();
   const url = `${base}/v2/checkout/orders`;
   const payload = {
@@ -56,7 +71,10 @@ const createOrder = async (cart) => {
       {
         amount: {
           currency_code: "USD",
-          value: "100.00",
+          value: ticket.price,
+        },
+        payee: {
+          email_address: ticket.user.userInfo.email,
         },
       },
     ],

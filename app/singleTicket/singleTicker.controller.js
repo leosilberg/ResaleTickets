@@ -1,6 +1,7 @@
 import { ticketsService } from "../services/tickets.service.js";
 import { navbarServices } from "../services/navbar.service.js";
 import { usersService } from "../services/users.service.js";
+import { paymentsService } from "../services/payments.service.js";
 
 const urlObj = new URL(window.location.href);
 const params = new URLSearchParams(urlObj.searchParams);
@@ -28,11 +29,9 @@ async function onInit() {
   window.purchaseTicket = purchaseTicket;
   window.onDeleteTicket = onDeleteTicket;
   // window. = currentUserValidation;
+
+  currentUser = await navbarServices.checkLogInStatus();
   displayTicketInfo();
-
-
-  
-  const currentUser = await navbarServices.checkLogInStatus();
   window.onSearchClick = onSearchClick;
 }
 
@@ -61,8 +60,8 @@ async function purchaseTicket() {
 
 async function displayTicketInfo() {
   let actionButton;
-  if (!(await currentUserValidation(ticket))) {
-    actionButton = `<button id="purchaseButton" onclick="purchaseTicket()"> <i class="fa-solid fa-cart-shopping"></i> Buy</button>`;
+  if (currentUserValidation(ticket)) {
+    actionButton = "";
   } else {
     actionButton = `<button id="deleteButton" onclick="onDeleteTicket()"><i class="fa-solid fa-trash-can"></i>  Delete</button>`;
   }
@@ -80,19 +79,15 @@ async function displayTicketInfo() {
   <p>Location: ${ticket.location}</p>
   <p>Serial Number: ${ticket.serialnumber}</p>
   <div>${actionButton} </div>`;
+  if (currentUserValidation(ticket)) {
+    await paymentsService.loadPayPal(ticket.id);
+  }
 }
 
 function openPaymentDetails() {
   window.location.href = "../paymentDetails/paymentDetails.html";
 }
 
-async function currentUserValidation(ticket) {
-  console.log(ticket.userId);
-  currentUser = await usersService.getCurrentUser();
-  console.log(currentUser);
-  if (ticket.userId === currentUser.id) {
-    return true;
-  } else {
-    return false;
-  }
+function currentUserValidation(ticket) {
+  return ticket.userId !== currentUser.id;
 }
