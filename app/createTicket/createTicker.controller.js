@@ -1,6 +1,7 @@
 import { ticketsService } from "../services/tickets.service.js";
 import { usersService } from "../services/users.service.js";
 import { navbarServices } from "../services/navbar.service.js";
+import { showToast } from "../services/toaster.service.js";
 
 window.onload = onInit;
 let currentUser;
@@ -27,8 +28,13 @@ async function onTicketSubmit() {
     const ticketData = new FormData(formElem);
     console.log(currentUser);
     ticketsService.createTicket(currentUser.id, ticketData);
-    navbarServices.goToUserProfile();
+    showToast("Ticket created successfully", "success");
+    setTimeout(() => {
+      navbarServices.goToUserProfile()
+    }, 2000);
   } else {
     console.log("Serial number is taken");
+    showToast("Serial number is taken", "error")
+
   }
 }

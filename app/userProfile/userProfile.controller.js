@@ -18,12 +18,16 @@ window.onload = onInit;
 async function onInit() {
   currentUser = await navbarServices.checkLogInStatus();
   window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
+  window.displayActionHistory = displayActionHistory;
   window.onSignOut = onSignOut;
-  elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}</h2>
+  elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}! 😊</h2>
             <div class="user_info_wrapper">
+            <div class="user_details_wrapper">
             <p>First Name: ${currentUser.userInfo.fname}</p>
             <p>Last Name: ${currentUser.userInfo.lname}</p>
             <p>Email: ${currentUser.userInfo.email}</p>
+            </div>
+            <p>"Welcome to your personal dashboard! Here, you can create new tickets, buy tickets, delete tickets, and search for your favorite events.</p><p> Manage your tickets effortlessly and enjoy the ultimate event experience."</p>
             <div class="user_tickets_info">
             <button onclick="displayTicketsOnSaleByMe()">Tickets On Sale By Me</button>
             <div>
@@ -37,39 +41,10 @@ async function displayTicketsOnSaleByMe() {
   console.log(tickets);
   elemUserTicketsOnSale.innerHTML = ``;
   renderService.displayTickets(tickets, elemUserTicketsOnSale);
+}
 
-  // const headerRow = table.insertRow();
-  // ["Category", "Date", "Title", "Price", "Location", "Serial Number"].forEach(
-  //   (headerText) => {
-  //     const th = document.createElement("th");
-  //     th.textContent = headerText;
-  //     headerRow.appendChild(th);
-  //   }
-  // );
+function displayActionHistory() {
 
-  // tickets
-  //   .filter((ticket) => ticket.isonsale)
-  //   .forEach((ticket) => {
-  //     console.log(ticket);
-  //     const row = table.insertRow();
-  //     [
-  //       "category",
-  //       "date",
-  //       "title",
-  //       "price",
-  //       "location",
-  //       "serialnumber",
-  //     ].forEach((key) => {
-  //       const cell = row.insertCell();
-  //       cell.textContent = ticket[key];
-  //     });
-  //     row.onclick = () =>
-  //       window.location.assign(
-  //         `../singleTicket/singleTicket.html?id=${ticket.id}`
-  //       );
-  //   });
-
-  // elemUserTicketsOnSale.appendChild(table);
 }
 
 function onSignOut() {

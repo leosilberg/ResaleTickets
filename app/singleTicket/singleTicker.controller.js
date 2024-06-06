@@ -1,6 +1,7 @@
 import { ticketsService } from "../services/tickets.service.js";
 import { navbarServices } from "../services/navbar.service.js";
 import { usersService } from "../services/users.service.js";
+import { showToast } from "../services/toaster.service.js";
 import { paymentsService } from "../services/payments.service.js";
 
 const urlObj = new URL(window.location.href);
@@ -26,6 +27,7 @@ window.onload = onInit;
 
 async function onInit() {
   ticket = await ticketsService.getTicketById(ticketID);
+  console.log(ticket);
   window.purchaseTicket = purchaseTicket;
   window.onDeleteTicket = onDeleteTicket;
   // window. = currentUserValidation;
@@ -43,18 +45,27 @@ function onSearchClick() {
 async function onDeleteTicket() {
   try {
     await ticketsService.deleteTicket(ticket.id);
-    navbarServices.goToUserProfile();
+    showToast("Ticket deleted successfully", "success");
+    setTimeout(() => {
+      navbarServices.goToUserProfile();
+    }, 1500);
   } catch (err) {
     console.log(err);
+    showToast("Sorry, cannot delete ticket", "error");
   }
 }
 
 async function purchaseTicket() {
   try {
-    const res = await ticketsService.purchaseTicket(ticket, currentUser.id);
-    console.log(res);
+    await ticketsService.purchaseTicket(ticket, currentUser.id);
+    await ticketsService.deleteTicket(ticket.id);
+    showToast("Ticket purchased", "success");
+    setTimeout(() => {
+      navbarServices.goToUserProfile();
+    }, 1500);
   } catch (err) {
     console.log(err);
+    showToast("Sorry, cannot complete the purchase", "error");
   }
 }
 
@@ -72,7 +83,7 @@ async function displayTicketInfo() {
   <div class="header_and_button_wrapper">
   <h2><i class="fa-solid fa-ticket"></i>  ${ticket.title}</h2>
   </div>
-  <p>Seller : ${ticket.user?.fname}</p>
+  <p>Seller : ${ticket.user?.fname} ${ticket.user?.lname}</p>
   <p>Category: ${ticket.category}</p>
   <p>Date: ${ticket.date}</p>
   <p>Price: $${ticket.price}</p>

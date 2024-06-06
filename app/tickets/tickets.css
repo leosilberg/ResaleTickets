@@ -37,12 +37,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
+    padding: 15px 30px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .ticket_card:hover {
@@ -52,7 +52,7 @@
 .ticket_date {
     font-size: 14px;
     text-align: center;
-    padding-right: 20px;
+    padding-right: 30px;
 }
 
 .ticket_date div:first-child {
@@ -62,7 +62,7 @@
 
 .ticket_info {
     flex: 1;
-    padding-left: 20px;
+    padding-left: 30px;
     border-left: solid 1px #ddd;
 
 }
@@ -96,4 +96,9 @@
 .see_tickets::before {
     content: '❤️';
     margin-right: 5px;
+}
+
+.search_type_error_p {
+    color: #d9d8d8;
+    font-size: 1.2rem;
 }

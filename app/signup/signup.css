@@ -12,34 +12,42 @@ body {
 }
 
 .create_user_form {
-    background-color: #403075dc;
+    /* background-color: #403075dc; */
+    background-color: white;
+    color: black;
+    width: 70vw;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.form_contant_wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    width: 70vw;
-    padding: 1rem;
-    border-radius: 10px;
+
+
 }
 
 .create_user_h1 {
     margin: 0;
     margin-left: 1rem;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-.header_and_back_button {
+/* .header_and_back_button {
     width: 100%;
     display: flex;
     justify-content: center;
-}
+} */
 
 .label_and_input {
     width: 50%;
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -82,4 +90,17 @@ input[type="submit"]:hover {
     margin: 0;
     padding: 8px;
     align-self: flex-end;
+}
+
+.ticket_image {
+    border-radius: 10px;
+    width: 360px;
+    height: 200px;
+    background-image: url(/images/ticket.img.png.jpg);
+    background-size: cover;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

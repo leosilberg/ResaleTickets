@@ -16,6 +16,7 @@ async function createTicket(userId, ticketData) {
       userId: userId,
       category: ticketData.get("category"),
       date: ticketData.get("date"),
+      time: ticketData.get("time"),
       title: ticketData.get("title"),
       price: ticketData.get("price"),
       location: ticketData.get("location"),
@@ -40,7 +41,7 @@ async function deleteTicket(ticketIdToDelete) {
     const result = await axios.delete(`${ticketsUrl}/${ticketIdToDelete}`);
     return result.data;
   } catch (err) {
-    console.log(err);
+    throw new Error("Oops, failed to delete ticket!");
   }
 }
 
@@ -68,7 +69,7 @@ async function purchaseTicket(ticket, userID) {
     return true;
   } catch (error) {
     console.log(error);
-    console.error("Error creating ticket and updating user:", error);
+    // throw new Error("Must sign in first!");
   }
 }
 

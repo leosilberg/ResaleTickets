@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <link rel="stylesheet" href="signup.css">
-  </head>
-  <body>
-    <div class="main">
-      <form  id="signUpForm" class="create_user_form">
-        
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+  <div id="toasterContainer" class="toaster-container"></div>
+  <div class="main">
+    <form id="signUpForm" class="create_user_form">
+      <div class="form_contant_wrapper">
         <button class="back-button" onclick="window.location.href='../home/index.html'">Back to home page</button>
         <h1 class="create_user_h1">Create new user</h1>
-        <div class="label_and_input"><label for="username">Username:</label><input type="text" placeholder="User name" required name="username" id="username"></div>
-        <div class="label_and_input"><label for="password">Password:</label><input type="password" placeholder="Password" required name="password" id="password"></div>
-        <div class="label_and_input"><label for="fName">First Name:</label><input type="text" placeholder="First name" required name="fname" id="fName"></div>
-        <div class="label_and_input"><label for="lName">Last Name:</label><input type="text" placeholder="Last name" required name="lname" id="lName"></div>
-        <div class="label_and_input"><label for="email">Email:</label><input type="text" placeholder="Email" required name="email" id="email"></div>
+        <div class="label_and_input"><label for="username">Username:</label><input type="text" placeholder="User name"
+            required name="username" id="username"></div>
+        <div class="label_and_input"><label for="password">Password:</label><input type="password"
+            placeholder="Password" required name="password" id="password"></div>
+        <div class="label_and_input"><label for="fName">First Name:</label><input type="text" placeholder="First name"
+            required name="fname" id="fName"></div>
+        <div class="label_and_input"><label for="lName">Last Name:</label><input type="text" placeholder="Last name"
+            required name="lname" id="lName"></div>
+        <div class="label_and_input"><label for="email">Email:</label><input type="text" placeholder="Email" required
+            name="email" id="email"></div>
         <input type="submit" value="Sign Up">
-        <!-- <button>Sign Up</button> -->
-      </form>
-    </div>
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
+      </div>
+      <div class="ticket_image">
+        <p>"Your ticket to the</p>
+        <p>ultimate experience."</p>
+      </div>
+  </div>
+  <!-- <button>Sign Up</button> -->
+  </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
     integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer">
-</script>
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
   <script type="module" src="signup.controller.js"></script>
-  </body>
+</body>
+
 </html>
