@@ -3,8 +3,8 @@ export const renderService = {
 };
 function displayTickets(tickets, ticketContainer) {
   if (tickets.length === 0) {
-    ticketContainer.innerHTML =
-      "Can't find what you're looking for, try something else.";
+    document.querySelector(".pagination").innerHTML = "";
+    ticketContainer.innerHTML = `<p class="search_type_error_p">Can't find what you're looking for, try something else.😟</p>`;
   } else {
     tickets.forEach((ticket) => {
       console.log(ticket);

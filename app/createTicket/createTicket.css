@@ -12,21 +12,22 @@ body {
 }
 
 .create_ticket_form {
-    background-color: #403075dc;
+    height: fit-content;
+    background-color: white;
+    color: black;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 1.5rem;
     align-items: center;
-    gap: 1rem;
     width: 70vw;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 10px;
 }
 
 .create_ticket_h1 {
     margin: 0;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .label_and_input {

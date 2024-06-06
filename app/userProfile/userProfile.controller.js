@@ -20,11 +20,14 @@ async function onInit() {
   window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
   window.displayActionHistory = displayActionHistory;
   window.onSignOut = onSignOut;
-  elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}</h2>
+  elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}! 😊</h2>
             <div class="user_info_wrapper">
+            <div class="user_details_wrapper">
             <p>First Name: ${currentUser.userInfo.fname}</p>
             <p>Last Name: ${currentUser.userInfo.lname}</p>
             <p>Email: ${currentUser.userInfo.email}</p>
+            </div>
+            <p>"Welcome to your personal dashboard! Here, you can create new tickets, buy tickets, delete tickets, and search for your favorite events.</p><p> Manage your tickets effortlessly and enjoy the ultimate event experience."</p>
             <div class="user_tickets_info">
             <button onclick="displayTicketsOnSaleByMe()">Tickets On Sale By Me</button>
             <div>

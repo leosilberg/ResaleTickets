@@ -1,6 +1,7 @@
 import { ticketsService } from "../services/tickets.service.js";
 import { navbarServices } from "../services/navbar.service.js";
 import { usersService } from "../services/users.service.js";
+import { showToast } from "../services/toaster.service.js";
 
 const urlObj = new URL(window.location.href);
 const params = new URLSearchParams(urlObj.searchParams);
@@ -31,8 +32,6 @@ async function onInit() {
   // window. = currentUserValidation;
   displayTicketInfo();
 
-
-
   const currentUser = await navbarServices.checkLogInStatus();
   window.onSearchClick = onSearchClick;
 }
@@ -45,18 +44,27 @@ function onSearchClick() {
 async function onDeleteTicket() {
   try {
     await ticketsService.deleteTicket(ticket.id);
-    navbarServices.goToUserProfile();
+    showToast("Ticket deleted successfully", "success");
+    setTimeout(() => {
+      navbarServices.goToUserProfile();
+    }, 1500);
   } catch (err) {
     console.log(err);
+    showToast("Sorry, cannot delete ticket", "error");
   }
 }
 
 async function purchaseTicket() {
   try {
-    const res = await ticketsService.purchaseTicket(ticket, currentUser.id);
-    onDeleteTicket();
+    await ticketsService.purchaseTicket(ticket, currentUser.id);
+    await ticketsService.deleteTicket(ticket.id);
+    showToast("Ticket purchased", "success");
+    setTimeout(() => {
+      navbarServices.goToUserProfile();
+    }, 1500);
   } catch (err) {
     console.log(err);
+    showToast("Sorry, cannot complete the purchase", "error");
   }
 }
 
@@ -99,5 +107,4 @@ async function currentUserValidation(ticket) {
   } catch (err) {
     return false;
   }
-
 }
