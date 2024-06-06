@@ -166,18 +166,6 @@
   ],
   "tickets": [
     {
-      "id": "5",
-      "userId": "user1",
-      "category": "flight",
-      "date": "2024-08-14",
-      "time": "22:30",
-      "title": "Flight to NYC",
-      "price": 150,
-      "location": "Airport E",
-      "serialnumber": "567890123456",
-      "isonsale": true
-    },
-    {
       "id": "6",
       "userId": "user1",
       "category": "other",

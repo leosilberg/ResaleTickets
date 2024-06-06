@@ -99,6 +99,10 @@ tr:hover {
   background-color: #f2f2f2;
 }
 
+.ticket_list {
+  margin-bottom: 1rem;
+}
+
 /* nav bar css */
 
 dialog {

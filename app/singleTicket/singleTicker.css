@@ -4,12 +4,16 @@
 }
 
 .ticket_card_container {
+    margin-top: 1rem;
     min-width: 40vw;
     background-color: rgb(202, 202, 184);
     border-radius: 5px;
     padding: 10px;
     display: flex;
+    gap: 1rem;
     flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 .ticket_card_container h2 {
@@ -17,11 +21,15 @@
     font-weight: 600;
 }
 
-.header_and_button_wrapper {
+.action-button {
+    align-self: flex-end;
+}
+
+/* .header_and_button_wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 #purchaseButton {
     background-color: rgb(112, 159, 101);
@@ -38,3 +46,4 @@
 #deleteButton:hover {
     background-color: rgb(230, 28, 28);
 }
+
