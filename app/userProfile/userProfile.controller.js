@@ -8,9 +8,7 @@ import { ticketsService } from "../services/tickets.service.js";
 // const userID = params.get("id");
 let currentUser;
 const elemUserProfile = document.querySelector(".user_profile");
-const elemTicketTable = document.querySelector(
-  ".tickets_list"
-);
+const elemTicketTable = document.querySelector(".tickets_list");
 
 window.onload = onInit;
 
@@ -20,7 +18,7 @@ async function onInit() {
   window.displayPurchasedTickets = displayPurchasedTickets;
   window.displaySoldTickets = displaySoldTickets;
   window.onSignOut = onSignOut;
-  elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}! 😊</h2>
+  elemUserProfile.innerHTML = `<div class="sign_out_and_hello_name"><h2>Hello ${currentUser.userInfo.fname}! 😊</h2><button onclick="onSignOut()">Sign Out</button></div>
             <div class="user_info_wrapper">
             <div class="user_details_wrapper">
             <p>First Name: ${currentUser.userInfo.fname}</p>

@@ -12,7 +12,6 @@
 }
 
 .user_profile h2 {
-  margin-bottom: 20px;
   color: #333;
   font-size: 1.5rem;
 }
@@ -59,6 +58,18 @@
   color: white;
 }
 
+.sign_out_and_hello_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sign_out_and_hello_name button {
+  padding: 8px;
+  font-size: 12px;
+}
+
 .pageActionButton {
   background-color: #4a3e77;
   padding: 4px 8px 4px 8px;
@@ -78,6 +89,12 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ticket_card:hover {
+  background-color: #d9d8d8;
+  transform: translateX(-10px);
 }
 
 .ticket_card:hover {
@@ -125,6 +142,14 @@
   font-size: 14px;
   display: flex;
   align-items: center;
+  padding: 4px;
+  background-color: #d0d0d3;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.see_tickets:hover {
+  background-color: #b0b0b3;
 }
 
 .see_tickets::before {
@@ -147,3 +172,39 @@
         padding: 5px 10px;
     }
 } */
+
+@media screen and (max-width: 900px) {
+  .main{
+    display: flex;
+    flex-direction: column;
+  }
+  .user_details_wrapper {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .user_details_wrapper p {
+   margin: 0;
+  }
+
+  .user_profile_wrapper {
+    width: 90vw;
+    /* margin-inline: 1rem; */
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .ticket_card div {
+    font-size: 12px;
+  }
+  .ticket_date div:first-child {
+    font-size: 14px;
+}
+}
+
+@media screen and (max-width: 440px) {
+  .user_profile_wrapper a{
+    font-size: 8px;
+  }
+}
