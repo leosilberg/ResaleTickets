@@ -56,16 +56,17 @@ async function getTicketById(id) {
 }
 async function purchaseTicket(ticket, userID) {
   try {
-    const purchaseResult = await axios.post(purchasedTicketsUrl, {
-      ...ticket,
-      userId: userID,
-      isonsale: false,
-    });
-    console.log(purchaseResult.data);
-    const ticketResult = await axios.patch(`${ticketsUrl}/${ticket.id}`, {
-      isonsale: false,
-    });
-    console.log(ticketResult.data);
+    const ticketResult = await Promise.allSettled([
+      axios.patch(`${ticketsUrl}/${ticket.id}`, {
+        isonsale: false,
+      }),
+      axios.post(purchasedTicketsUrl, {
+        ...ticket,
+        userId: userID,
+        isonsale: false,
+      }),
+    ]);
+    console.log(ticketResult);
     return true;
   } catch (error) {
     console.log(error);
@@ -79,25 +80,25 @@ async function paginateTickets(
   pageNum,
   ticketsPerPage,
   searchQuery,
-  sortOrder
+  sortOrder,
+  userId
 ) {
   try {
     if (searchQuery !== prevSearchQuery || _gTickets.length == 0) {
       console.log("Fetch tickets");
       prevSearchQuery = searchQuery;
       const result = await axios.get(
-        `${ticketsUrl}?_embed=user&_sort=${sortOrder}&isonsale=true`
+        `${ticketsUrl}?_embed=user&_sort=date,time&isonsale=true`
       );
-      console.log(result.data.length);
+
       _gTickets = result.data.filter((ticket) => {
         return (
-          ticket.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          ticket.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          ticket.category.toLowerCase().includes(searchQuery.toLowerCase())
+          ticket.userId !== userId &&
+          (ticket.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            ticket.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            ticket.category.toLowerCase().includes(searchQuery.toLowerCase()))
         );
       });
-
-      console.log(_gTickets.length);
     }
 
     const temp = _gTickets.slice(

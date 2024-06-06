@@ -1,5 +1,6 @@
 import { ticketsService } from "./tickets.service.js";
 import { navbarServices } from "./navbar.service.js";
+import {showToast} from "./toaster.service.js"
 export const paymentsService = {
   loadPayPal,
 };
@@ -95,6 +96,7 @@ async function loadPayPal(ticket,userId) {
             
            const purchaseResult= await ticketsService.purchaseTicket(ticket,userId);
            console.log(purchaseResult)
+           showToast("Successfully purchased ticket","success")
             setTimeout(() => {
               navbarServices.goToUserProfile();
             }, 1500);

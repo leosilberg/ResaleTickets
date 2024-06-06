@@ -8,18 +8,17 @@ import { ticketsService } from "../services/tickets.service.js";
 // const userID = params.get("id");
 let currentUser;
 const elemUserProfile = document.querySelector(".user_profile");
-const elemUserTicketsOnSale = document.querySelector(
-  ".tickets_on_sale_by_me_list"
+const elemTicketTable = document.querySelector(
+  ".tickets_list"
 );
-const elemUserTicketsSold = document.querySelector(".tickets_sold_by_me_table");
-const elemActionHistory = document.querySelector(".action_history_table");
 
 window.onload = onInit;
 
 async function onInit() {
   currentUser = await navbarServices.checkLogInStatus();
-  window.displayTicketsOnSaleByMe = displayTicketsOnSaleByMe;
-  window.displayActionHistory = displayActionHistory;
+  window.displayTicketsForSale = displayTicketsForSale;
+  window.displayPurchasedTickets = displayPurchasedTickets;
+  window.displaySoldTickets = displaySoldTickets;
   window.onSignOut = onSignOut;
   elemUserProfile.innerHTML = `<h2>Hello ${currentUser.userInfo.fname}! 😊</h2>
             <div class="user_info_wrapper">
@@ -30,25 +29,40 @@ async function onInit() {
             </div>
             <p>"Welcome to your personal dashboard! Here, you can create new tickets, buy tickets, delete tickets, and search for your favorite events.</p><p> Manage your tickets effortlessly and enjoy the ultimate event experience."</p>
             <div class="user_tickets_info">
-            <button onclick="displayTicketsOnSaleByMe()">Tickets On Sale By Me</button>
+            <button onclick="displayTicketsForSale()">Tickets for Sale</button>
+            <button onclick="displaySoldTickets()">Tickets Sold</button>
+            <button onclick="displayPurchasedTickets()">Purchased Tickets</button>
             <div>
-            <button onclick="displayActionHistory()">Action History</button>
             <button onclick="window.location.href='../createTicket/createTicker.html'">Create new Ticket</button>
             </div>`;
+  displayTicketsForSale();
 }
 
-async function displayTicketsOnSaleByMe() {
+async function displayPurchasedTickets() {
+  const tickets = currentUser.purchasedTickets;
+  displayTickets(tickets, "<p>You haven't purchased any tickets</p>");
+}
+
+async function displaySoldTickets() {
+  const tickets = currentUser.tickets.filter((ticket) => !ticket.isonsale);
+  displayTickets(tickets, "<p>You haven't sold any tickets</p>");
+}
+async function displayTicketsForSale() {
   const tickets = currentUser.tickets.filter((ticket) => ticket.isonsale);
-  console.log(tickets);
-  elemUserTicketsOnSale.innerHTML = ``;
+  displayTickets(
+    tickets,
+    "<p>You don't have any tickets on sale currently</p>"
+  );
+}
+
+function displayTickets(tickets, errorMessage) {
+  elemTicketTable.innerHTML = ``;
   if (tickets.length != 0) {
-    renderService.displayTickets(tickets, elemUserTicketsOnSale);
-  }else{
-    elemUserTicketsOnSale.innerHTML="<p>You dont have any tickets on sale currently</p>"
+    renderService.displayTickets(tickets, elemTicketTable);
+  } else {
+    elemTicketTable.innerHTML = errorMessage;
   }
 }
-
-function displayActionHistory() {}
 
 function onSignOut() {
   usersService.signOut();

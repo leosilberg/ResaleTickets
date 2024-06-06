@@ -1,30 +1,37 @@
 .user_profile_wrapper {
-    margin-block: 20px;
-    margin-inline: 100px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-block: 20px;
+  margin-inline: 100px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .user_profile h2 {
-    margin-bottom: 20px;
-    color: #333;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
 }
 
 .user_info_wrapper {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .user_info_wrapper p {
-    margin: 10px 0;
-    color: #555;
+  margin: 10px 0;
+  color: #555;
 }
 
 .user_tickets_info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 20px;
 }
 
 /* .user_tickets_info button {
@@ -40,91 +47,87 @@
 } */
 
 .user_details_wrapper {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .user_tickets_info button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-
 #pagesDesc {
-    color: white;
+  color: white;
 }
 
 .pageActionButton {
-    background-color: #4a3e77;
-    padding: 4px 8px 4px 8px;
+  background-color: #4a3e77;
+  padding: 4px 8px 4px 8px;
 }
 
-.ticket_list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.tickets_list {
+  align-self: stretch;
 }
 
 .ticket_card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .ticket_card:hover {
-    background-color: #d9d8d8;
+  background-color: #d9d8d8;
 }
 
 .ticket_date {
-    font-size: 14px;
-    text-align: center;
-    padding-right: 20px;
+  font-size: 14px;
+  text-align: center;
+  padding-right: 20px;
 }
 
 .ticket_date div:first-child {
-    font-weight: bold;
-    font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .ticket_info {
-    flex: 1;
-    padding-left: 20px;
-    border-left: solid 1px #ddd;
-
+  flex: 1;
+  padding-left: 20px;
+  border-left: solid 1px #ddd;
 }
 
 .ticket_title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .ticket_location,
 .ticket_seller,
 .ticket_remaining {
-    font-size: 14px;
-    color: #555;
+  font-size: 14px;
+  color: #555;
 }
 
 .ticket_action {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .see_tickets {
-    text-decoration: none;
-    color: #007bff;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
 }
 
 .see_tickets::before {
-    content: '❤️';
-    margin-right: 5px;
+  content: "❤️";
+  margin-right: 5px;
 }

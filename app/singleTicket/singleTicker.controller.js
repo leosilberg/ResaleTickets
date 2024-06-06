@@ -88,16 +88,22 @@ async function displayTicketInfo() {
   <p>Location: ${ticket.location}</p>
   <p>Serial Number: ${ticket.serialnumber}</p>
   <div>${actionButton} </div>`;
-  if (currentUserValidation(ticket)) {
-    console.log(currentUser.id)
-    await paymentsService.loadPayPal(ticket,currentUser.id);
+  if (currentUser) {
+    if (currentUserValidation(ticket)) {
+      console.log(currentUser.id);
+      if (
+        !currentUser.purchasedTickets.some(
+          (purchased) => ticket.id === purchased?.id
+        )
+      ) {
+        await paymentsService.loadPayPal(ticket, currentUser.id);
+      }
+    }
+  }else{
+    elemTicketCardContainer.querySelector("div").innerText = "Please login to proceed!"
   }
 }
 
-function openPaymentDetails() {
-  window.location.href = "../paymentDetails/paymentDetails.html";
-}
-
 function currentUserValidation(ticket) {
-  return ticket.userId !== currentUser.id;
+  return ticket.userId !== currentUser?.id;
 }

@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": "0d33",
-      "username": "ariel",
-      "password": "ariel12345",
-      "userInfo": {
-        "fname": "Ariel",
-        "lname": "Silberg",
-        "email": "ariels@gmail.com"
-      }
-    },
-    {
       "id": "53c0",
       "username": "Nevo",
       "password": "neo12345",
@@ -19,80 +9,185 @@
         "lname": "B",
         "email": "nevo@gmail.com"
       }
+    },
+    {
+      "id": "53c1",
+      "username": "Ariel",
+      "password": "ariel12345",
+      "userInfo": {
+        "fname": "Ariel",
+        "lname": "S",
+        "email": "ariels@gmail.com"
+      }
+    },
+    {
+      "id": "53c2",
+      "username": "Omer",
+      "password": "omer12345",
+      "userInfo": {
+        "fname": "Omer",
+        "lname": "Sidi",
+        "email": "omersidi@gmail.com"
+      }
+    },
+    {
+      "id": "53c3",
+      "username": "Ramin",
+      "password": "ramin12345",
+      "userInfo": {
+        "fname": "Ramin",
+        "lname": "G",
+        "email": "ramin@gmail.com"
+      }
     }
   ],
   "purchasedTickets": [
-    {
-      "id": "9c6b",
-      "userId": "53c0",
-      "category": "concerts",
-      "date": "2024-06-07",
-      "time": "09:42",
-      "title": "Concert",
-      "price": "100",
-      "location": "Tel aviv",
-      "serialnumber": "123445365",
-      "isonsale": false,
-      "user": {
-        "fname": "Ariel",
-        "lname": "Silberg",
-        "email": "ariels@gmail.com"
-      }
-    },
-    {
-      "id": "f68b",
-      "userId": "53c0",
-      "category": "sports",
-      "date": "2024-06-19",
-      "time": "06:12",
-      "title": "Soccer",
-      "price": "100",
-      "location": "Tel Aviv",
-      "serialnumber": "654356768",
-      "isonsale": false,
-      "user": {
-        "fname": "Ariel",
-        "lname": "Silberg",
-        "email": "ariels@gmail.com"
-      }
-    }
+
   ],
   "tickets": [
-    {
-      "id": "9c6b",
-      "userId": "0d33",
-      "category": "concerts",
-      "date": "2024-06-07",
-      "time": "09:42",
-      "title": "Concert",
-      "price": "100",
-      "location": "Tel aviv",
-      "serialnumber": "123445365",
-      "isonsale": false
-    },
-    {
-      "id": "f68b",
-      "userId": "0d33",
-      "category": "sports",
-      "date": "2024-06-19",
-      "time": "06:12",
-      "title": "Soccer",
-      "price": "100",
-      "location": "Tel Aviv",
-      "serialnumber": "654356768",
-      "isonsale": false
-    },
-    {
-      "id": "f67b",
-      "userId": "0d33",
-      "category": "sports",
-      "date": "2024-06-19",
-      "time": "06:12",
-      "title": "Soccer",
-      "price": "100",
-      "location": "Tel Aviv",
-      "serialnumber": "654356768",
-      "isonsale": true
-    }
-  ]
+      {
+        "id": "f68b",
+        "userId": "53c0",
+        "category": "sports",
+        "date": "2024-06-19",
+        "time": "06:12",
+        "title": "Soccer",
+        "price": "100",
+        "location": "Tel Aviv",
+        "serialnumber": "654356768",
+        "isonsale": true
+      },
+      {
+        "id": "f68c",
+        "userId": "53c1",
+        "category": "music",
+        "date": "2024-07-10",
+        "time": "20:00",
+        "title": "Concert",
+        "price": "150",
+        "location": "Jerusalem",
+        "serialnumber": "789345672",
+        "isonsale": true
+      },
+      {
+        "id": "f68d",
+        "userId": "53c2",
+        "category": "theatre",
+        "date": "2024-08-05",
+        "time": "19:30",
+        "title": "Play",
+        "price": "200",
+        "location": "Haifa",
+        "serialnumber": "923847561",
+        "isonsale": true
+      },
+      {
+        "id": "f68e",
+        "userId": "53c3",
+        "category": "conference",
+        "date": "2024-09-15",
+        "time": "09:00",
+        "title": "Tech Summit",
+        "price": "300",
+        "location": "Eilat",
+        "serialnumber": "837465982",
+        "isonsale": true
+      },
+      {
+        "id": "f68f",
+        "userId": "53c0",
+        "category": "exhibition",
+        "date": "2024-10-01",
+        "time": "10:00",
+        "title": "Art Expo",
+        "price": "120",
+        "location": "Tel Aviv",
+        "serialnumber": "756839201",
+        "isonsale": true
+      },
+      {
+        "id": "f690",
+        "userId": "53c1",
+        "category": "festival",
+        "date": "2024-11-20",
+        "time": "18:00",
+        "title": "Food Festival",
+        "price": "80",
+        "location": "Jerusalem",
+        "serialnumber": "654832194",
+        "isonsale": true
+      },
+      {
+        "id": "f691",
+        "userId": "53c2",
+        "category": "workshop",
+        "date": "2024-12-05",
+        "time": "14:00",
+        "title": "Photography Workshop",
+        "price": "250",
+        "location": "Haifa",
+        "serialnumber": "198237465",
+        "isonsale": true
+      },
+      {
+        "id": "f692",
+        "userId": "53c3",
+        "category": "seminar",
+        "date": "2025-01-10",
+        "time": "09:30",
+        "title": "Business Seminar",
+        "price": "350",
+        "location": "Eilat",
+        "serialnumber": "765432198",
+        "isonsale": true
+      },
+      {
+        "id": "f693",
+        "userId": "53c0",
+        "category": "networking",
+        "date": "2025-02-15",
+        "time": "18:30",
+        "title": "Startup Networking",
+        "price": "50",
+        "location": "Tel Aviv",
+        "serialnumber": "874563210",
+        "isonsale": true
+      },
+      {
+        "id": "f694",
+        "userId": "53c1",
+        "category": "sports",
+        "date": "2025-03-25",
+        "time": "15:00",
+        "title": "Basketball",
+        "price": "130",
+        "location": "Jerusalem",
+        "serialnumber": "876543219",
+        "isonsale": true
+      },
+      {
+        "id": "f695",
+        "userId": "53c2",
+        "category": "music",
+        "date": "2025-04-10",
+        "time": "21:00",
+        "title": "Jazz Night",
+        "price": "180",
+        "location": "Haifa",
+        "serialnumber": "129384756",
+        "isonsale": true
+      },
+      {
+        "id": "f696",
+        "userId": "53c3",
+        "category": "conference",
+        "date": "2025-05-20",
+        "time": "08:00",
+        "title": "Health Conference",
+        "price": "400",
+        "location": "Eilat",
+        "serialnumber": "908273645",
+        "isonsale": true
+      }
+    ]
 }

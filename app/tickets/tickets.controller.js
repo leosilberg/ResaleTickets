@@ -2,12 +2,12 @@ import { ticketsService } from "../services/tickets.service.js";
 import { navbarServices } from "../services/navbar.service.js";
 import { renderService } from "../services/render.service.js";
 
-
 let currentPageNumber = 1;
 let totalPageNumber;
 const maxNumberPerPage = 5;
 let elemSearch = document.getElementById("searchBar");
 let ticketsPage;
+let currentUser;
 window.onload = onInit;
 
 async function onInit() {
@@ -16,12 +16,10 @@ async function onInit() {
   window.searchFunction = searchFunction;
   window.nextHandler = nextHandler;
   window.previousHandler = previousHandler;
+  currentUser = await navbarServices.checkLogInStatus();
   loadTickets();
-  const currentUser = await navbarServices.checkLogInStatus();
 }
 async function searchFunction() {
-  currentPageNumber = 1;
-  loadTickets();
   currentPageNumber = 1;
   loadTickets();
 }
@@ -32,18 +30,8 @@ async function loadTickets() {
     currentPageNumber,
     maxNumberPerPage,
     elemSearch.value,
-    ""
-  );
-  totalPageNumber = ticketsPage.maxPages;
-  // currentPageNumber = ticketsPage.currentPageNum;
-  console.log(ticketsPage.maxPages);
-  displayTickets(ticketsPage.tickets);
-  console.log(elemSearch.value);
-  ticketsPage = await ticketsService.paginateTickets(
-    currentPageNumber,
-    maxNumberPerPage,
-    elemSearch.value,
-    ""
+    "",
+    currentUser?.id
   );
   totalPageNumber = ticketsPage.maxPages;
   // currentPageNumber = ticketsPage.currentPageNum;
@@ -57,7 +45,6 @@ function displayTickets(tickets) {
   ticketContainer.innerHTML = ""; // Clear any previous content
   elemPaging.innerHTML = `<div id="pagesDesc">page ${currentPageNumber} out of ${totalPageNumber}</div><div id="pages_arrows"><button class="pageActionButton" onclick="previousHandler()"><</button><button class="pageActionButton" onclick="nextHandler()">></button></div>`;
   renderService.displayTickets(tickets, ticketContainer);
-
 }
 
 async function nextHandler() {
