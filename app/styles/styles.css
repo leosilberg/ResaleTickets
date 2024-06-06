@@ -41,7 +41,7 @@ body {
   background-color: #312757;
   border: 1px solid #fff;
   border-radius: 10px;
-  width: 20vw;
+  width: 25vw;
 }
 
 .search_bar a {
@@ -194,4 +194,60 @@ dialog {
     opacity: 0;
     transform: translateY(-20px);
   }
+}
+
+
+/* Nav Bar responsive */
+
+@media screen and (max-width: 900px) {
+  .logo a {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .navbar {
+    padding-inline: 10px;
+  }
+
+  .search_bar input {
+    width: 30vw;
+    padding: 5px 10px 5px 35px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo a {
+    font-size: 14px;
+  }
+
+  .search_bar input {
+    width: 35vw;
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar {
+    padding-inline: 5px;
+  }
+
+  .logo a {
+    font-size: 12px;
+  }
+
+  .search_bar input {
+    width: 40vw;
+  }
+
 }

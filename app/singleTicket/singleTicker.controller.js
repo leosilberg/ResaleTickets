@@ -106,4 +106,5 @@ async function displayTicketInfo() {
 
 function currentUserValidation(ticket) {
   return ticket.userId !== currentUser?.id;
+  return ticket.userId !== currentUser?.id;
 }

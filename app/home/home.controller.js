@@ -31,11 +31,11 @@ function carouselInit() {
   const carouselElem = document.querySelector(".main_categories");
 
   prevBtn.onclick = () => {
-    updateCarouselPosition("0px");
+    updateCarouselPosition("0vw");
   };
 
   nextBtn.onclick = () => {
-    updateCarouselPosition("-1025px");
+    updateCarouselPosition("-65vw");
   };
 
   function updateCarouselPosition(position) {

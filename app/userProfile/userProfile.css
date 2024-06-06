@@ -131,3 +131,19 @@
   content: "❤️";
   margin-right: 5px;
 }
+
+/* 
+@media screen and (max-width: 900px) {
+    .user_profile_wrapper {
+        margin-inline: 50px;
+    }
+
+    .user_info_wrapper p {
+        font-size: 14px;
+    }
+
+    .user_info_wrapper button {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+} */

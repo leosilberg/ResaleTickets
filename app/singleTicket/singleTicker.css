@@ -1,4 +1,4 @@
-.main_ticket_card_wrapper {
+ .main_ticket_card_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,7 +6,7 @@
   gap: 2rem;
 }
 
-.ticket_card_container {
+/* .ticket_card_container {
   margin-top: 1rem;
   min-width: 40vw;
   background-color: rgb(202, 202, 184);
@@ -16,17 +16,20 @@
   gap: 1rem;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-}
+} */
 
-.ticket_card_container h2 {
+/* .ticket_card_container h2 {
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 .action-button {
   align-self: flex-end;
-}
+}  */
+
+
+
+
 
 /* .header_and_button_wrapper {
     display: flex;
@@ -48,4 +51,48 @@
 
 #deleteButton:hover {
   background-color: rgb(230, 28, 28);
+}
+
+.ticket_card_container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.3s;
+  margin: 20px;
+}
+
+.ticket_card_container:hover {
+  transform: translateY(-10px);
+}
+
+.ticket_card_container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.ticket_card_container h2 i {
+  margin-right: 10px;
+  color: #ff6347; /* Tomato color for the ticket icon */
+}
+
+.ticket_card_container p {
+  font-size: 16px;
+  color: #555555;
+  margin: 5px 0;
+}
+
+.ticket_card_container p:last-of-type {
+  font-size: 14px;
+  color: #888888;
+  margin-top: 15px;
+}
+
+.ticket_card_container div {
+  border-top: 1px solid #eeeeee;
+  margin-top: 15px;
+  padding-top: 15px;
 }

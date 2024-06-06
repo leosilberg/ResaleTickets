@@ -5,7 +5,7 @@ export const paymentsService = {
   loadPayPal,
 };
 
-async function loadPayPal(ticket,userId) {
+async function loadPayPal(ticket, userId) {
   window.paypal
     .Buttons({
       style: {
