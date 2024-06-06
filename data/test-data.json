@@ -113,10 +113,28 @@
   ],
   "purchasedTickets": [
     {
+      "id": "1",
+      "userId": "01f0",
+      "category": "sports",
+      "date": "2024-04-10",
+      "time": "18:00",
+      "title": "Football Match",
+      "price": 50,
+      "location": "Stadium A",
+      "serialnumber": "123456789012",
+      "isonsale": false,
+      "user": {
+        "fname": "John",
+        "lname": "Doe",
+        "email": "john.doe@example.com"
+      }
+    },
+    {
       "id": "2",
-      "userId": "user1",
+      "userId": "01f0",
       "category": "concert",
       "date": "2024-05-11",
+      "time": "19:30",
       "title": "Rock Concert",
       "price": 40,
       "location": "Concert Hall B",
@@ -129,26 +147,11 @@
       }
     },
     {
-      "id": "7",
-      "userId": "user1",
-      "category": "sports",
-      "date": "2024-10-16",
-      "title": "Basketball Game",
-      "price": 60,
-      "location": "Stadium A",
-      "serialnumber": "789012345678",
-      "isonsale": false,
-      "user": {
-        "fname": "asdsafd",
-        "lname": "asfasf",
-        "email": "bitonnevo@gmail.com"
-      }
-    },
-    {
       "id": "3",
-      "userId": "user1",
+      "userId": "01f0",
       "category": "movie",
       "date": "2024-06-12",
+      "time": "20:15",
       "title": "Avengers: Endgame",
       "price": 12,
       "location": "Cinema C",
@@ -159,94 +162,75 @@
         "lname": "asfasf",
         "email": "bitonnevo@gmail.com"
       }
-    },
+    }
+  ],
+  "tickets": [
     {
-      "id": "3",
+      "id": "5",
       "userId": "user1",
-      "category": "movie",
-      "date": "2024-06-12",
-      "title": "Avengers: Endgame",
-      "price": 12,
-      "location": "Cinema C",
-      "serialnumber": "345678901234",
-      "isonsale": false,
-      "user": {
-        "fname": "asdsafd",
-        "lname": "asfasf",
-        "email": "bitonnevo@gmail.com"
-      }
-    },
-    {
-      "id": "3",
-      "userId": "user1",
-      "category": "movie",
-      "date": "2024-06-12",
-      "title": "Avengers: Endgame",
-      "price": 12,
-      "location": "Cinema C",
-      "serialnumber": "345678901234",
-      "isonsale": false,
-      "user": {
-        "fname": "asdsafd",
-        "lname": "asfasf",
-        "email": "bitonnevo@gmail.com"
-      }
-    },
-    {
-      "id": "4",
-      "userId": "user1",
-      "category": "theater",
-      "date": "2024-07-13",
-      "title": "Broadway Show",
-      "price": 70,
-      "location": "Theater D",
-      "serialnumber": "456789012345",
-      "isonsale": false,
-      "user": {
-        "fname": "omer",
-        "lname": "sidi",
-        "email": "omer.sidi10@gmail.com"
-      }
+      "category": "flight",
+      "date": "2024-08-14",
+      "time": "22:30",
+      "title": "Flight to NYC",
+      "price": 150,
+      "location": "Airport E",
+      "serialnumber": "567890123456",
+      "isonsale": true
     },
     {
       "id": "6",
       "userId": "user1",
       "category": "other",
       "date": "2024-09-15",
+      "time": "23:45",
       "title": "Music Festival",
       "price": 80,
       "location": "Festival Grounds F",
       "serialnumber": "678901234567",
-      "isonsale": false,
-      "user": {
-        "fname": "Jane",
-        "lname": "Smith",
-        "email": "jane.smith@example.com"
-      }
+      "isonsale": true
+    },
+    {
+      "id": "7",
+      "userId": "49fd",
+      "category": "sports",
+      "date": "2024-10-16",
+      "time": "12:00",
+      "title": "Basketball Game",
+      "price": 60,
+      "location": "Stadium A",
+      "serialnumber": "789012345678",
+      "isonsale": true
     },
     {
       "id": "8",
       "userId": "user1",
       "category": "concert",
       "date": "2024-11-17",
+      "time": "13:15",
       "title": "Jazz Concert",
       "price": 50,
       "location": "Concert Hall B",
       "serialnumber": "890123456789",
-      "isonsale": false,
-      "user": {
-        "fname": "omer",
-        "lname": "sidi",
-        "email": "omer.sidi10@gmail.com"
-      }
-    }
-  ],
-  "tickets": [
+      "isonsale": true
+    },
+    {
+      "id": "9",
+      "userId": "user1",
+      "category": "movie",
+      "date": "2024-12-18",
+      "time": "14:45",
+      "title": "Star Wars",
+      "price": 15,
+      "location": "Cinema C",
+      "serialnumber": "901234567890",
+      "isonsale": true
+    },
     {
       "id": "10",
       "userId": "user2",
       "category": "theater",
       "date": "2024-01-19",
+      "time": "15:30",
       "title": "Opera Show",
       "price": 90,
       "location": "Theater D",
@@ -258,6 +242,7 @@
       "userId": "49fd",
       "category": "flight",
       "date": "2024-02-20",
+      "time": "16:20",
       "title": "Flight to LA",
       "price": 200,
       "location": "Airport E",
@@ -269,6 +254,7 @@
       "userId": "01f0",
       "category": "other",
       "date": "2024-03-21",
+      "time": "17:10",
       "title": "Comedy Show",
       "price": 40,
       "location": "Comedy Club G",
@@ -276,10 +262,23 @@
       "isonsale": true
     },
     {
+      "id": "13",
+      "userId": "user1",
+      "category": "sports",
+      "date": "2024-04-22",
+      "time": "18:40",
+      "title": "Baseball Game",
+      "price": 35,
+      "location": "Stadium A",
+      "serialnumber": "345612109876",
+      "isonsale": true
+    },
+    {
       "id": "14",
       "userId": "user2",
       "category": "concert",
       "date": "2024-05-23",
+      "time": "19:50",
       "title": "Pop Concert",
       "price": 60,
       "location": "Concert Hall B",
@@ -291,6 +290,7 @@
       "userId": "49fd",
       "category": "movie",
       "date": "2024-06-24",
+      "time": "20:00",
       "title": "Inception",
       "price": 10,
       "location": "Cinema C",
@@ -302,6 +302,7 @@
       "userId": "01f0",
       "category": "theater",
       "date": "2024-07-25",
+      "time": "21:30",
       "title": "Drama Play",
       "price": 45,
       "location": "Theater D",
@@ -309,69 +310,15 @@
       "isonsale": true
     },
     {
-      "id": "18",
-      "userId": "user2",
-      "category": "other",
-      "date": "2024-09-27",
-      "title": "Tech Conference",
-      "price": 100,
-      "location": "Conference Center H",
-      "serialnumber": "890167654321",
-      "isonsale": true
-    },
-    {
-      "id": "19",
-      "userId": "49fd",
-      "category": "sports",
-      "date": "2024-10-28",
-      "title": "Tennis Match",
-      "price": 30,
-      "location": "Tennis Court I",
-      "serialnumber": "901278765432",
-      "isonsale": true
-    },
-    {
-      "id": "20",
+      "id": "79bc",
       "userId": "01f0",
-      "category": "concert",
-      "date": "2024-11-29",
-      "title": "Classical Concert",
-      "price": 55,
-      "location": "Concert Hall B",
-      "serialnumber": "012389876543",
-      "isonsale": true
-    },
-    {
-      "id": "0359",
-      "userId": "01f0",
-      "category": "sports",
-      "date": "2024-06-07",
-      "title": "asdasdasd",
-      "price": "12",
-      "location": "Drive In",
-      "serialnumber": "1231412412",
-      "isonsale": true
-    },
-    {
-      "id": "b7b0",
-      "userId": "01f0",
-      "category": "sports",
-      "date": "2024-06-07",
-      "title": "asdawdwad",
-      "price": "1234",
-      "location": "asdasd",
-      "serialnumber": "2124125152",
-      "isonsale": true
-    },
-    {
-      "id": "782f",
-      "userId": "01f0",
-      "category": "concerts",
-      "date": "2024-06-05",
-      "title": "asd",
-      "price": "2123",
-      "location": "asdasd",
-      "serialnumber": "2141241",
+      "category": "flights",
+      "date": "2024-06-10",
+      "time": "20:00",
+      "title": "Flight to Dubai",
+      "price": "500",
+      "location": "Tel Aviv",
+      "serialnumber": "123456852014",
       "isonsale": true
     },
     {
