@@ -74,7 +74,11 @@ async function displayTicketInfo() {
   if (currentUserValidation(ticket)) {
     actionButton = "";
   } else {
-    actionButton = `<button id="deleteButton" onclick="onDeleteTicket()"><i class="fa-solid fa-trash-can"></i>  Delete</button>`;
+    if (ticket.isonsale) {
+      actionButton = `<button id="deleteButton" onclick="onDeleteTicket()"><i class="fa-solid fa-trash-can"></i>  Delete</button>`;
+    } else {
+      actionButton = "";
+    }
   }
 
   // ticket = await ticketsService.getTicketById(ticketID);
@@ -99,12 +103,12 @@ async function displayTicketInfo() {
         await paymentsService.loadPayPal(ticket, currentUser.id);
       }
     }
-  }else{
-    elemTicketCardContainer.querySelector("div").innerText = "Please login to proceed!"
+  } else {
+    elemTicketCardContainer.querySelector("div").innerText =
+      "Please login to proceed!";
   }
 }
 
 function currentUserValidation(ticket) {
-  return ticket.userId !== currentUser?.id;
   return ticket.userId !== currentUser?.id;
 }

@@ -35,7 +35,7 @@ async function onLogIn(logInFormElem) {
   if (isValidUser) {
     goToUserProfile();
   } else {
-    console.log("username or password are incorrect!");
+    showToast("username or password are incorrect!","error");
   }
 }
 function onGuestMode() {

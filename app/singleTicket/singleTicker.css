@@ -1,4 +1,4 @@
- .main_ticket_card_wrapper {
+.main_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,10 +27,6 @@
   align-self: flex-end;
 }  */
 
-
-
-
-
 /* .header_and_button_wrapper {
     display: flex;
     justify-content: space-between;
@@ -53,7 +49,7 @@
   background-color: rgb(230, 28, 28);
 }
 
-.ticket_card_container {
+.main_ticket_card_wrapper {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -63,7 +59,7 @@
   margin: 20px;
 }
 
-.ticket_card_container:hover {
+.main_ticket_card_wrapper:hover {
   transform: translateY(-10px);
 }
 
